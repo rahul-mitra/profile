@@ -37,14 +37,17 @@ jobs:
           sudo rm -rf /home/ubuntu/sites-active/profile/*
           echo "Old build removed."
 
-    - name: Copy built contents (dist/profile/*) to remote
+    - name: Copy browser and server folders to remote
       uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
-        source: "dist/profile/*"
-        target: "/home/ubuntu/sites-active/profile"
+      source: |
+        dist/profile/browser
+        dist/profile/server
+      target: "/home/ubuntu/sites-active/profile"
+
 
     - name: Restart PM2 app "server"
       uses: appleboy/ssh-action@v1.0.0
