@@ -1,0 +1,49 @@
+name: Angular SSR CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.16.0
+
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build Angular SSR (ng build)
+      run: ng build
+
+    - name: Copy build output to Oracle VM
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        source: "dist/profile/"
+        target: "/home/ubuntu/sites-active/profile"
+
+    - name: Restart PM2 app "server"
+      uses: appleboy/ssh-action@v1.0.0
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_KEY }}
+        script: |
+          export NVM_DIR="/home/ubuntu/.nvm"
+          source $NVM_DIR/nvm.sh
+          nvm use 22.16.0
+          sudo pm2 restart server
