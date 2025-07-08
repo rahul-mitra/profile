@@ -24,10 +24,10 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Build Angular SSR
+    - name: Build Angular SSR (ng build builds both browser + server)
       run: ng build
 
-    - name: Clear remote folder before deploy
+    - name: Clear existing build
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.SSH_HOST }}
@@ -35,21 +35,19 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           sudo rm -rf /home/ubuntu/sites-active/profile/*
-          echo "Old build removed."
+          echo "Cleaned up old build at /home/ubuntu/sites-active/profile/"
 
-    - name: Copy browser and server folders to remote
+    - name: Copy built browser + server folders to remote (flattened)
       uses: appleboy/scp-action@v0.1.7
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
-        source: |
-          dist/profile/browser
-          dist/profile/server
+        source: "dist/profile/*"
         target: "/home/ubuntu/sites-active/profile"
+        strip_components: 2
 
-
-    - name: Restart PM2 app "server"
+    - name: Restart PM2 app named "server"
       uses: appleboy/ssh-action@v1.0.0
       with:
         host: ${{ secrets.SSH_HOST }}
