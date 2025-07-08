@@ -43,10 +43,10 @@ jobs:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USER }}
         key: ${{ secrets.SSH_KEY }}
-      source: |
-        dist/profile/browser
-        dist/profile/server
-      target: "/home/ubuntu/sites-active/profile"
+        source: |
+          dist/profile/browser
+          dist/profile/server
+        target: "/home/ubuntu/sites-active/profile"
 
 
     - name: Restart PM2 app "server"
