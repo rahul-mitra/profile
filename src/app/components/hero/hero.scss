@@ -1,0 +1,127 @@
+
+@import '../../../styles.scss';
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: $bg-light;
+  padding: $spacing-xl 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1s ease-out forwards;
+  animation-delay: 0.2s;
+
+  @media (max-width: 768px) {
+    min-height: 70vh;
+    padding: $spacing-lg 0;
+  }
+}
+
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.hero-name {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: $spacing-sm;
+
+
+  background: linear-gradient(to right, $primary-purple, $secondary-purple, $primary-purple);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 3s linear infinite;
+
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 2.8rem;
+  }
+}
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: $primary-purple;
+  margin-bottom: $spacing-md;
+  line-height: 1.2;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.6rem;
+  }
+}
+
+.hero-tagline {
+  font-size: 1.4rem;
+  color: $text-medium;
+  max-width: 800px;
+  margin: 0 auto $spacing-xl auto;
+  line-height: 1.7;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    margin-bottom: $spacing-lg;
+  }
+  @media (max-width: 480px) {
+    font-size: 1.05rem;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: $spacing-md;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  .button {
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    &:first-of-type {
+      animation-delay: 0.6s;
+    }
+    &:last-of-type {
+      animation-delay: 0.8s;
+    }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+}

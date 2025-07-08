@@ -1,0 +1,124 @@
+
+@import '../../../styles.scss';
+
+.contact-section {
+  background-color: #FFFFFF;
+  border-radius: $spacing-sm;
+  box-shadow: 0 6px 20px rgba($text-dark, 0.07);
+  margin-bottom: $spacing-xl;
+  padding: $spacing-xl;
+
+  @media (max-width: 768px) {
+    padding: $spacing-lg $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+.contact-content {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+}
+
+.contact-form {
+  background-color: $bg-lighter;
+  padding: $spacing-lg;
+  border-radius: $spacing-sm;
+  box-shadow: 0 2px 8px rgba($text-dark, 0.05);
+
+  @media (max-width: 480px) {
+    padding: $spacing-md;
+  }
+}
+
+.form-group {
+  margin-bottom: $spacing-md;
+
+  label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $text-dark;
+    margin-bottom: $spacing-xxs;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: $spacing-xs;
+    border: 1px solid $text-light;
+    border-radius: $spacing-xxs;
+    font-family: $font-family-body;
+    font-size: 1rem;
+    color: $text-dark;
+    background-color: #FFFFFF;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-purple;
+      box-shadow: 0 0 0 3px rgba($primary-purple, 0.2);
+    }
+
+    &::placeholder {
+      color: $text-light;
+      opacity: 0.8;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .error-message {
+    color: darken($secondary-purple, 10%);
+    font-size: 0.85rem;
+    margin-top: $spacing-xxs;
+  }
+}
+
+.social-links-contact {
+  margin-top: $spacing-xl;
+
+  h3 {
+    font-size: 1.5rem;
+    color: $text-dark;
+    margin-bottom: $spacing-md;
+  }
+
+  .email-contact {
+    font-size: 1.1rem;
+    color: $text-medium;
+    margin-bottom: $spacing-md;
+    margin-top: $spacing-md;
+    a {
+      font-weight: 600;
+    }
+  }
+
+  .links-grid {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+
+    a {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: $primary-purple;
+      padding: $spacing-xxs $spacing-xs;
+      border-radius: $spacing-xxs;
+      transition: background-color 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        background-color: $primary-purple;
+        color: #FFFFFF;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+/* src/app/modules/projects/components/project-card/project-card.scss */
+@import '../../../../../styles.scss';
+
+.project-card {
+  background-color: #FFFFFF;
+  border-radius: $spacing-sm;
+  box-shadow: 0 4px 15px rgba($text-dark, 0.08);
+  overflow: hidden; /* Ensure content inside doesn't cause card overflow */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 480px; /* Default height for larger screens */
+  width: 100%; /* NEW: Ensure card takes full width of its grid cell */
+  box-sizing: border-box; /* NEW: Include padding and border in the element's total width */
+
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba($text-dark, 0.12);
+  }
+
+  @media (max-width: 1200px) { /* Adjust for slightly smaller desktops/large tablets */
+    min-height: 460px;
+  }
+
+  @media (max-width: 768px) { /* Tablets and smaller */
+    min-height: auto; /* Allow height to adjust dynamically */
+  }
+
+  @media (max-width: 480px) { /* Mobile phones */
+    min-height: auto; /* Ensure no fixed height */
+  }
+}
+
+.project-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+
+  @media (max-width: 480px) {
+    height: 180px; /* Slightly smaller thumbnail on very small screens */
+  }
+}
+
+.card-content {
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between; /* Distributes space, pushing card-actions to bottom */
+  box-sizing: border-box; /* NEW: Also apply to content to prevent its padding from causing overflow */
+
+  @media (max-width: 480px) {
+    padding: $spacing-sm; /* Reduced padding on very small screens */
+  }
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-dark;
+  margin-bottom: $spacing-xs;
+  line-height: 1.2;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: calc(1.5rem * 1.2 * 2); /* Ensures at least two lines of space */
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    min-height: calc(1.4rem * 1.2 * 2);
+  }
+  @media (max-width: 480px) {
+    font-size: 1.25rem; /* Smaller font for mobile titles */
+    min-height: calc(1.25rem * 1.2 * 2);
+  }
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: $text-medium;
+  margin-bottom: $spacing-md;
+  flex-grow: 1;
+  min-height: 4.5rem; /* Ensure consistent height for description (e.g., 3 lines of text) */
+  max-height: 4.5rem; /* Truncate longer descriptions */
+  overflow: hidden; /* Hide overflow if text is too long */
+  text-overflow: ellipsis; /* Add ellipsis for truncated text */
+  display: -webkit-box; /* For line clamping */
+  -webkit-line-clamp: 3; /* Clamp to 3 lines */
+  -webkit-box-orient: vertical; /* Required for -webkit-line-clamp */
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem; /* Smaller description text on mobile */
+    min-height: 4rem; /* Slightly reduced height for description on mobile */
+    max-height: 4rem;
+  }
+}
+
+.project-technologies {
+  margin-bottom: $spacing-md;
+  min-height: 2rem; /* Ensure consistent height even with few chips */
+  overflow: hidden; /* Hides content outside of this container */
+  position: relative; /* For absolute positioning if needed, or z-index context */
+  padding-bottom: $spacing-xxs; /* Add some padding for scrollbar visibility on some OS/browsers */
+
+  @media (max-width: 480px) {
+    min-height: 1.8rem; /* Slightly smaller min-height for tech chips on mobile */
+  }
+}
+
+.technologies-scroll-container {
+  display: flex;
+  flex-wrap: nowrap; /* Force all chips onto a single line */
+  gap: $spacing-xxs; /* Spacing between chips */
+  width: max-content; /* Allow container to be as wide as its content */
+  animation: scrollTechnologies 20s linear infinite; /* Apply animation */
+  /* Pause animation on hover for better readability */
+  .project-card:hover & {
+    animation-play-state: paused;
+  }
+}
+
+.technologies-scroll-content { /* Styles for the inner content wrapper */
+  display: flex;
+  flex-wrap: nowrap; /* Ensure chips within this stay on one line */
+  gap: $spacing-xxs; /* Apply gap to the content itself */
+}
+
+
+/* Keyframes for the continuous horizontal scroll animation */
+@keyframes scrollTechnologies {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* Scrolls exactly half the width to seamlessly loop the duplicated content */
+    transform: translateX(-50%);
+  }
+}
+
+.project-ownership { /* Styles for the ownership display */
+  font-size: 0.85rem;
+  color: $text-light;
+  margin-bottom: $spacing-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: $spacing-xxs $spacing-xs;
+  border-radius: $spacing-xxs;
+  background-color: lighten($primary-purple, 50%); /* Light purple background */
+  color: $primary-purple-dark; /* Dark purple text */
+  display: inline-block; /* To wrap around text content */
+  align-self: flex-start; /* Align to the start of the flex container */
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem; /* Smaller font for ownership on mobile */
+    padding: $spacing-xxs $spacing-xs;
+  }
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+
+  app-button {
+    flex-grow: 1;
+    text-align: center; /* Center text in buttons */
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,65 @@
+/* src/app/modules/projects/pages/projects-page/projects-page.scss */
+@import '../../../../../styles.scss'; /* Corrected path to global styles */
+
+.projects-page-section {
+  background-color: #f8f9fa; /* A light background for the page */
+  min-height: calc(100vh - #{$header-height} - #{$footer-height}); /* Ensure it takes up screen height */
+
+  .container {
+    /* Container styles handled by global styles */
+  }
+}
+
+::ng-deep .category-filters {
+  display: flex;
+  flex-wrap: wrap; /* Allow chips to wrap to next line */
+  justify-content: center; /* Center align the chips */
+  gap: $spacing-sm; /* Spacing between chips */
+  margin-bottom: $spacing-xl; /* Space below the filters and above project list */
+
+  app-tag-chip {
+    cursor: pointer; /* Indicate that chips are clickable */
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease; /* Ensure transition on component host */
+
+    // Hover styles applied to the host element
+    &:hover {
+      .tag-chip { /* Target the inner span on hover of the host */
+        background-color: $primary-purple-light; /* Lighter purple on hover */
+        color: $primary-purple-dark;
+      }
+      transform: translateY(-2px); /* Slight lift */
+      box-shadow: 0 2px 8px rgba($primary-purple, 0.1);
+    }
+
+    // NEW: Enhanced active state, targeting the inner span
+    &.active {
+      .tag-chip { /* Target the inner span when host is active */
+        background-color: $primary-purple; /* Primary purple background */
+        color: #FFFFFF; /* White text */
+        font-weight: 600; /* Bolder text */
+        border: 2px solid $secondary-purple; /* Add a contrasting border */
+      }
+      box-shadow: 0 4px 10px rgba($primary-purple, 0.3); /* Stronger shadow */
+      transform: translateY(-1px); /* Keep slightly lifted */
+    }
+  }
+
+  @media (max-width: 768px) {
+    gap: $spacing-xs; /* Tighter gap on smaller screens */
+    margin-bottom: $spacing-lg;
+    padding: 0 $spacing-sm; /* Add some horizontal padding to prevent overflow */
+  }
+
+  @media (max-width: 480px) {
+    justify-content: flex-start; /* Left-align on very small screens if many categories */
+    overflow-x: auto; /* Allow horizontal scrolling if chips don't fit */
+    white-space: nowrap; /* Prevent chips from wrapping if horizontal scroll is enabled */
+    padding-bottom: $spacing-xxs; /* Add some padding for scrollbar visibility */
+    // Hide scrollbar but keep functionality
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}

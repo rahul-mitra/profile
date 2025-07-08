@@ -1,0 +1,60 @@
+/* src/app/modules/projects/components/project-list/project-list.scss */
+@import '../../../../../styles.scss'; /* Corrected path: styles.scss is directly in src */
+
+.project-list-container {
+  /* No specific padding here; rely on parent .section-padding and .container */
+  /* This container itself should allow its children (the grid) to manage internal padding */
+  overflow: hidden; /* Ensure no overflow from this container */
+}
+
+.no-projects-message {
+  padding: $spacing-xl 0;
+  color: $text-medium;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  /* Default for larger screens: 3 columns, responsive min width of 280px */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $spacing-lg; /* Spacing between grid items */
+  margin-top: $spacing-lg;
+  box-sizing: border-box; /* Include padding in element's total width */
+
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for slightly smaller desktops */
+    gap: $spacing-lg; /* Maintain gap */
+  }
+
+  @media (max-width: 768px) { /* Tablets and smaller */
+    grid-template-columns:repeat(auto-fit, 100%); /* Single column */
+    gap: $spacing-md;
+    /* Remove padding here, as the parent .container handles horizontal padding */
+    padding: 0; /* REMOVED: padding: 0 $spacing-sm; */
+  }
+
+  @media (max-width: 480px) { /* Very small mobile phones */
+    grid-template-columns: repeat(auto-fit, 100%);
+    gap: $spacing-sm;
+    padding: 0; /* REMOVED: padding: 0 $spacing-xs; */
+  }
+}
+
+/* Add an explicit override for the .container padding specifically for this component
+   on mobile, to allow the grid to take full width.
+   This might be in styles.scss or a more global location, but for demonstration,
+   it's placed here to show the interaction. */
+@media (max-width: 768px) {
+  .project-list-container.container { /* Target the combination of classes */
+    padding-left: $spacing-md; /* Add a consistent small padding to the container */
+    padding-right: $spacing-md;
+  }
+  @media (max-width: 480px) {
+    .project-list-container.container {
+      padding-left: $spacing-sm;
+      padding-right: $spacing-sm;
+    }
+  }
+}

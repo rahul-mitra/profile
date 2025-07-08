@@ -1,0 +1,140 @@
+/* src/styles.scss */
+/* This is your global stylesheet.
+   It defines base styles, imports variables, mixins, and sets up typography.
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+
+$primary-purple: #673AB7;       // Deep Purple
+$primary-purple-light: #9575CD; // NEW: Lighter shade for use in hover states etc.
+$primary-purple-dark: #4e2c94;  // Slightly darker for hover
+$secondary-purple: #9C27B0;     // Medium Purple
+$text-dark: #212121;            // Main text
+$text-medium: #424242;          // Secondary text
+$text-light: #757575;           // Tertiary text
+$bg-light: #FAFAFA;             // Light background
+$bg-lighter: #F5F5F5;           // Slightly darker light background
+$bg-dark: #1A1A1A;              // Dark background for footer/dark mode
+$border-color-light: #E0E0E0;   // Defined border-color-light
+
+
+$font-family-heading: 'Montserrat', sans-serif;
+$font-family-body: 'Inter', sans-serif;
+$font-family-mono: 'Fira Code', monospace;
+
+
+$spacing-xxs: 0.25rem; // 4px
+$spacing-xs: 0.5rem;   // 8px
+$spacing-sm: 1rem;     // 16px
+$spacing-md: 1.5rem;   // 24px
+$spacing-lg: 2rem;     // 32px
+$spacing-xl: 3rem;     // 48px
+$spacing-xxl: 4rem;    // 64px
+
+
+$header-height: 4.5rem; // Approximate height of your header
+$footer-height: 8rem;   // Approximate height of your footer
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family-body;
+  color: $text-dark;
+  background-color: $bg-light;
+  line-height: 1.6;
+}
+
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+  color: $text-dark;
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+  line-height: 1.2;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; margin-bottom: $spacing-md; }
+h3 { font-size: 1.8rem; margin-bottom: $spacing-sm; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+
+
+p {
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+}
+
+
+a {
+  color: $primary-purple;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary-purple-dark;
+    text-decoration: underline;
+  }
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.section-padding {
+  padding: $spacing-xl 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  .section-padding {
+    padding: $spacing-lg 0;
+  }
+  .container {
+    padding: 0 $spacing-sm;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.3rem; }
+  .section-padding {
+    padding: $spacing-md 0;
+  }
+}

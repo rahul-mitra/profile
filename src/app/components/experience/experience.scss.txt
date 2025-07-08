@@ -1,0 +1,337 @@
+/* src/app/components/experience/experience.scss */
+@import '../../../styles.scss'; /* Global variables and mixins */
+
+.experience-section {
+  background-color: $bg-light;
+  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+}
+
+.loading-state {
+  padding: $spacing-xl 0;
+  text-align: center;
+  color: $text-medium;
+
+  .spinner-large {
+    border: 6px solid rgba($primary-purple, 0.2);
+    border-top: 6px solid $primary-purple;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin: $spacing-md auto;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px; /* Adjust max width of the timeline container */
+  margin: 0 auto;
+  padding: $spacing-xl 0;
+  overflow-x: hidden; /* Prevent horizontal scroll for the timeline container */
+
+  /* Desktop-only central line */
+  &::after {
+    content: '';
+    position: absolute;
+    width: 12px; /* The central line width */
+    background: linear-gradient(to bottom, $primary-purple, $secondary-purple); /* Gradient line */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -6px; /* Half of width to center */
+    border-radius: 6px; /* Rounded ends for the line */
+
+    @media (max-width: 768px) {
+      display: none; /* Hide central line on mobile */
+    }
+  }
+
+  /* Mobile-specific left-aligned line */
+  @media (max-width: 768px) {
+    &::before { /* Use ::before for the mobile vertical line */
+      content: '';
+      position: absolute;
+      width: 6px; /* Thinner line for mobile */
+      background: linear-gradient(to bottom, $primary-purple, $secondary-purple);
+      top: 0;
+      bottom: 0;
+      left: $spacing-md; /* Position on the left side, adjusted */
+      margin-left: -3px; /* Half of width to center */
+      border-radius: 3px;
+      height: 100%; /* Ensure it spans the full height */
+      z-index: 0; /* Ensure line is behind content */
+    }
+  }
+}
+
+.timeline-item {
+  padding: 10px 0; /* Vertical padding for each item */
+  position: relative;
+  width: 50%; /* Each item takes half width on desktop */
+  background-color: transparent; /* No background for the item itself */
+
+  /* Desktop positioning of the item itself */
+  &.left {
+    left: 0;
+    padding-right: $spacing-xxl;
+  }
+
+  &.right {
+    left: 50%;
+    padding-left: $spacing-xxl;
+  }
+
+  /* Circles for timeline dots - Desktop positioning */
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: $primary-purple;
+    border: 4px solid $bg-light;
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%); /* Adjust for its own height */
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  /* Dot positioning for left/right items on desktop */
+  &.left::after {
+    right: -10px; /* Align with the right side of the item */
+    left: auto; /* Ensure no left positioning */
+  }
+
+  &.right::after {
+    left: -10px; /* Align with the left side of the item */
+    right: auto; /* Ensure no right positioning */
+  }
+
+  /* Arrow positioning for content boxes - Desktop */
+  .timeline-content {
+    background-color: #FFFFFF;
+    border-radius: $spacing-sm;
+    box-shadow: 0 4px 15px rgba($text-dark, 0.08);
+    padding: $spacing-md;
+    position: relative;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      width: 25px;   /* Adjusted width for a more conventional arrow */
+      height: 25px;  /* Square base for arrow */
+      top: 50%; /* Centered vertically */
+      transform: translateY(-50%); /* Adjust for its own height */
+      z-index: 2; /* Bring arrow to front */
+      background: linear-gradient(to bottom, $primary-purple, $secondary-purple); /* Gradient background */
+      box-shadow: 0 2px 8px rgba($text-dark, 0.2); /* Add a subtle shadow to make it pop */
+      border-radius: 4px; /* Apply a general border-radius for softer edges */
+    }
+  }
+
+  &.left .timeline-content::after {
+    /* Right-pointing arrow */
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    right: -25px; /* Position accounting for its new width */
+    left: auto;
+    /* We can't apply border-radius to specific sides of a clip-path.
+       The general border-radius above will apply to the original square,
+       then clip-path cuts it. For a "curved" illusion, we rely on the
+       shadow and the point being very close to the circle. */
+  }
+
+  &.right .timeline-content::after {
+    /* Left-pointing arrow */
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    left: -25px; /* Position accounting for its new width */
+    right: auto;
+    /* Same note as above for border-radius */
+  }
+
+
+  /* Year positioning for left/right items on desktop */
+  .timeline-year {
+    position: absolute;
+    top: 50%; /* Centered vertically */
+    transform: translateY(-50%); /* Adjust for its own height */
+    width: 100px; /* Fixed width for consistent year placement */
+    font-family: $font-family-heading;
+    font-weight: 600;
+    color: $primary-purple;
+    font-size: 1.1rem;
+    z-index: 1;
+  }
+
+  &.left .timeline-year {
+    right: -130px; /* Position year to the right of the line */
+    left: auto;
+    text-align: left;
+  }
+
+  &.right .timeline-year {
+    left: -130px; /* Position year to the left of the line */
+    right: auto;
+    text-align: right;
+  }
+
+
+  /* ========================================================== */
+  /* Responsive adjustments for mobile (override desktop styles) */
+  /* ========================================================== */
+  @media (max-width: 768px) {
+    width: 100% !important; /* Force full width on mobile */
+    left: 0 !important; /* Force reset left to 0 for all items */
+    right: auto !important; /* Force reset right for all items */
+    padding-left: 0 !important; /* Force remove horizontal padding from timeline-item itself */
+    padding-right: 0 !important; /* Force remove horizontal padding from timeline-item itself */
+    margin-bottom: $spacing-lg; /* Add space between stacked cards */
+    display: flex; /* Use flexbox for item layout on mobile */
+    flex-direction: column; /* Stack content vertically within the item */
+    box-sizing: border-box; /* Ensure padding/border are included in width */
+
+
+    /* Hide the dot on mobile */
+    &::after {
+      display: none !important; /* Force hide the dot on mobile */
+    }
+
+    /* Content box on mobile */
+    .timeline-content {
+      border-left: 5px solid $primary-purple; /* Add a colored left border to the card */
+      border-radius: $spacing-sm; /* Keep rounded corners */
+      padding: $spacing-md; /* Standard padding inside the card */
+      margin-left: calc(#{$spacing-md} + 6px); /* Adjusted margin-left to align with the mobile line */
+      margin-right: $spacing-md; /* Ensure some right margin */
+      box-sizing: border-box; /* Include padding and border in the element's total width */
+      /* Calculate width for mobile: 100% - (margin-left + margin-right) */
+      width: calc(100% - ((#{$spacing-md} + 6px) + #{$spacing-md}));
+
+      &::after {
+        content: none !important; /* Force remove desktop arrow on mobile */
+      }
+    }
+
+    /* Year positioning on mobile */
+    .timeline-year {
+      position: relative !important; /* Change to relative to be in normal flow */
+      top: auto !important; /* Reset top */
+      left: auto !important; /* Reset left */
+      right: auto !important; /* Reset right */
+      transform: none !important; /* Remove transform */
+      text-align: left !important; /* Ensure text is always left-aligned on mobile */
+      margin-bottom: $spacing-sm !important; /* Add space below the year */
+      margin-left: calc(#{$spacing-md} + 6px); /* Align with the content box's left margin */
+      color: $primary-purple !important; /* Make year more prominent on mobile */
+      font-size: 1.2rem !important;
+      font-weight: 700 !important;
+      z-index: auto !important; /* Reset z-index */
+      width: auto !important; /* Allow width to be natural */
+    }
+
+    /* Adjust the main timeline-item padding for mobile to create visual gaps */
+    padding: $spacing-md 0;
+  }
+
+  /* Specific adjustment for very small mobile screens for spacing */
+  @media (max-width: 480px) {
+    /* Adjustments for the mobile line itself to be less intrusive */
+    .timeline::before {
+      left: $spacing-xs; /* Move mobile line slightly more to the left */
+    }
+
+    .timeline-content {
+      margin-left: calc(#{$spacing-lg} + 6px); /* Adjusted margin-left for 480px to align with timeline-year */
+      /* Recalculate width for 480px: 100% - (margin-left + margin-right) */
+      width: calc(100% - ((#{$spacing-lg} + 6px) + #{$spacing-md}));
+    }
+
+    .timeline-year {
+      left: auto !important; /* Reset left positioning */
+      margin-left: calc(#{$spacing-xs} + 24px); /* Adjust margin-left for smaller screens */
+      font-size: 1rem !important;
+    }
+  }
+}
+
+.timeline-content {
+  .content-header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xs;
+
+    .organization-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 1px 3px rgba($text-dark, 0.1);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.6rem;
+      color: $text-dark;
+      line-height: 1.2;
+    }
+
+    .location {
+      font-size: 0.95rem;
+      color: $text-light;
+      margin-left: auto; /* Push location to the right */
+    }
+  }
+
+  .role {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $primary-purple;
+    margin-bottom: $spacing-sm;
+  }
+
+  .description-points {
+    list-style: disc;
+    padding-left: $spacing-md;
+    margin-bottom: $spacing-sm;
+    color: $text-medium;
+
+    li {
+      margin-bottom: $spacing-xxs;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xxs;
+    margin-top: $spacing-sm;
+  }
+
+  @media (max-width: 480px) {
+    .content-header {
+      flex-direction: column;
+      align-items: flex-start; /* Align logo/title to left */
+      gap: $spacing-xxs;
+      .location {
+        margin-left: 0; /* Reset margin */
+        text-align: left;
+      }
+    }
+    h3 {
+      font-size: 1.4rem;
+    }
+    .role {
+      font-size: 1.1rem;
+    }
+    .description-points {
+      padding-left: $spacing-sm;
+      font-size: 0.9rem;
+    }
+  }
+}

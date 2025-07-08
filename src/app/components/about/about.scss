@@ -1,0 +1,194 @@
+
+@import '../../../styles.scss';
+
+.about-section {
+  background-color: #FFFFFF;
+  border-radius: $spacing-sm;
+  box-shadow: 0 6px 20px rgba($text-dark, 0.07);
+  margin-bottom: $spacing-xl;
+  padding: $spacing-xl;
+
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 1s ease-out forwards;
+  animation-delay: 0.4s;
+
+  @media (max-width: 768px) {
+    padding: $spacing-lg $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
+
+  h2, h3 {
+    text-align: center;
+    color: $primary-purple;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xl;
+  max-width: 900px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    gap: $spacing-lg;
+  }
+}
+
+.profile-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-md;
+
+  .profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid $primary-purple;
+    box-shadow: 0 4px 10px rgba($primary-purple, 0.2);
+    transition: transform 0.3s ease;
+
+
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 480px) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: $text-medium;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: justify;
+
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInSlideUp 0.8s ease-out forwards;
+    animation-delay: 1s;
+
+
+    .highlight {
+      font-weight: 600;
+      color: $primary-purple-dark;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.skills-section {
+  margin-top: $spacing-xl;
+
+  h3 {
+    margin-bottom: $spacing-lg;
+    color: $text-dark;
+  }
+
+  .skill-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $spacing-lg;
+
+
+    .skill-category {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInSlideUp 0.7s ease-out forwards;
+
+
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          animation-delay: 1.2s + ($i * 0.2s);
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .skill-category {
+    background-color: $bg-lighter;
+    border-radius: $spacing-sm;
+    padding: $spacing-md;
+    box-shadow: 0 2px 8px rgba($text-dark, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h4 {
+      color: $text-dark;
+      font-size: 1.25rem;
+      margin-bottom: $spacing-md;
+      border-bottom: 2px solid $secondary-purple;
+      padding-bottom: $spacing-xxs;
+    }
+  }
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-xs;
+  }
+}
+
+.call-to-action {
+  margin-top: $spacing-xl;
+
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+  animation-delay: 2.2s;
+
+  h3 {
+    margin-bottom: $spacing-md;
+  }
+}

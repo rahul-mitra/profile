@@ -1,0 +1,125 @@
+@import "../../../../styles.scss";
+
+.button {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $spacing-xxs;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid transparent;
+  font-size: 1rem;
+  height: 100%;
+  // &:disabled, &[aria-disabled="true"] { /* NEW: Added &[aria-disabled="true"] */
+  //   pointer-events: none; /* Prevents click events on elements with pointer-events property */
+  //   opacity: 0.6;
+  //   cursor: not-allowed;
+  //   filter: grayscale(50%);
+  //   text-decoration: none !important; /* Ensure text-decoration is removed for disabled links */
+  // }
+
+  @media (max-width: 768px) {
+    padding: $spacing-xs $spacing-sm;
+    font-size: 0.9rem;
+  }
+// Styles for disabled state, applies to both <button disabled> and <a aria-disabled="true">
+  // For <button disabled>, the 'disabled' attribute natively prevents clicks and allows hover.
+  // For a[aria-disabled="true"], we explicitly prevent pointer events for visual consistency
+  // but allow hover for tooltip by removing pointer-events: none.
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(50%);
+    pointer-events: none; /* Prevents all pointer events */
+  }
+
+  &[aria-disabled="true"] { /* Applies to <a> tags when disabled */
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(50%);
+    text-decoration: none !important;
+    pointer-events: auto; /* IMPORTANT: Allow pointer events for hover, but click is guarded in TS */
+  }
+
+  // Custom Tooltip Styles (initial state)
+  .custom-tooltip {
+    visibility: hidden; /* Hidden by default */
+    opacity: 0; /* Start fully transparent */
+    background-color: $text-dark; /* Dark background for tooltip */
+    color: #FFFFFF; /* White text */
+    text-align: center;
+    border-radius: $spacing-xxs;
+    padding: $spacing-xs $spacing-sm;
+    position: absolute;
+    z-index: 1001; /* Ensure it's above other content */
+    bottom: 120%; /* Position above the button */
+    left: 50%;
+    transform: translateX(-50%) translateY(5px); /* Center horizontally, slight initial offset */
+    white-space: nowrap; /* Prevent text wrapping */
+    font-size: 0.8rem;
+    pointer-events: none; /* Allow clicks to pass through the tooltip itself */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+
+    /* Arrow for the tooltip */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%; /* At the bottom of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: $text-dark transparent transparent transparent; /* Dark arrow pointing down */
+    }
+  }
+
+  // Show tooltip on hover for ALL buttons (including disabled ones)
+  &:hover .custom-tooltip { /* NEW: Simplified hover rule for tooltip */
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0); /* Move to final position */
+  }
+
+  // Button visual hover effects (still exclude disabled)
+  &:hover:not(:disabled):not([aria-disabled="true"]) {
+    background-color: $primary-purple-dark;
+    box-shadow: 0 4px 12px rgba($primary-purple, 0.3); /* Soft shadow on hover */
+    transform: translateY(-2px); /* Slight lift */
+  }
+}
+
+.primary {
+  background-color: $primary-purple;
+  color: #ffffff;
+  border-color: $primary-purple;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-purple-dark;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba($primary-purple, 0.3);
+    transform: translateY(-2px);
+  }
+}
+
+.secondary {
+  background-color: transparent;
+  color: $primary-purple;
+  border-color: $primary-purple;
+
+  &:hover:not(:disabled) {
+    background-color: $primary-purple;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba($primary-purple, 0.2);
+    transform: translateY(-2px);
+  }
+}
+
+
+
+a{
+  text-decoration: none !important; /* Ensure text-decoration is removed for links */
+}
+

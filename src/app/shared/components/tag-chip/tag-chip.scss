@@ -1,0 +1,26 @@
+@import '../../../../styles.scss';
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: $bg-lighter;
+  color: $text-dark;
+  padding: $spacing-xxs $spacing-xs;
+  border-radius: $spacing-xxs;
+  font-size: 0.85rem;
+  font-family: $font-family-mono;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba($text-dark, 0.08);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    background-color: darken($bg-lighter, 3%);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+    padding: $spacing-xxs $spacing-xs;
+  }
+}

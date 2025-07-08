@@ -1,0 +1,439 @@
+{
+  "aboutMe": {
+    "intro": "I'm a full-stack developer with years of hands-on experience building scalable, maintainable applications across the modern web stack. Whether it's crafting dynamic UIs with Angular, building robust APIs with .NET Core, or wiring together services with Node.js, TypeScript, and SQL — I focus on delivering clean, purposeful code that drives real-world impact. My strength lies in thinking beyond features. I approach systems with an architects mindset — designing not just how they function, but how they *flow*. From user interactions to backend logic, every layer is built for clarity, performance, and cohesion. I've led projects across diverse domains, working on everything from cloud-based platforms to real-time services. At the core, I'm someone who loves solving complex problems and shaping elegant experiences through code. Whether I'm scaling a backend, refining a UI, or designing system architecture — I aim to build solutions that not only work, but *feel right*.",
+    "photoUrl": "https://avatars.githubusercontent.com/u/8863970?v=4"
+  },
+  "skills": [
+    {
+      "name": "Angular",
+      "category": "frontend"
+    },
+    {
+      "name": "TypeScript",
+      "category": "frontend"
+    },
+    {
+      "name": "RxJS",
+      "category": "frontend"
+    },
+    {
+      "name": "HTML5",
+      "category": "frontend"
+    },
+    {
+      "name": "SCSS",
+      "category": "frontend"
+    },
+    {
+      "name": "Responsive Design",
+      "category": "frontend"
+    },
+    {
+      "name": "Node.js",
+      "category": "backend"
+    },
+    {
+      "name": "Dot Net Core",
+      "category": "backend"
+    },
+    {
+      "name": "C#",
+      "category": "backend"
+    },
+    {
+      "name": "Web API's",
+      "category": "backend"
+    },
+    {
+      "name": "Windows Services",
+      "category": "backend"
+    },
+    {
+      "name": "Express.js",
+      "category": "backend"
+    },
+    {
+      "name": "MongoDB",
+      "category": "backend"
+    },
+    {
+      "name": "SQL (MSSQL)",
+      "category": "backend"
+    },
+    {
+      "name": "RESTful APIs",
+      "category": "backend"
+    },
+    {
+      "name": "Git",
+      "category": "tools"
+    },
+    {
+      "name": "Figma",
+      "category": "tools"
+    },
+    {
+      "name": "VS Code",
+      "category": "tools"
+    },
+    {
+      "name": "Visual Studio",
+      "category": "tools"
+    },
+    {
+      "name": "Jira",
+      "category": "tools"
+    },
+    {
+      "name": "Agile Methodologies",
+      "category": "methodologies"
+    },
+    {
+      "name": "User Research",
+      "category": "methodologies"
+    },
+    {
+      "name": "Wireframing",
+      "category": "methodologies"
+    },
+    {
+      "name": "Prototyping",
+      "category": "methodologies"
+    }
+  ],
+  "projects": [
+    {
+      "id": "cloud-rpa-designer",
+      "ownership": "Organization",
+      "title": "Cloud RPA Designer",
+      "category": [
+        "Full-Stack",
+        "Web Sockets",
+        "Real-Time",
+        "NodeTS",
+        "Angular",
+        "Typescript",
+        "Web API's",
+        "MongoDB",
+        "Redis",
+        "Mongoose"
+      ],
+      "thumbnail": "assets/images/cloud-homepage.png",
+      "shortDescription": "Cloud RPA designer platform, with real-time collaboration, deployment, and monitoring, built using Angular, NodeTs, and MongoDB, with Redis for distributed services.",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "SCSS",
+        "NodeTs",
+        "Socket.IO",
+        "MongoDB",
+        "Redis",
+        "Mongoose"
+      ],
+      "liveSiteUrl": "#",
+      "githubRepoUrl": "#",
+      "overview": "This project involved building a cloud-based Robotic Process Automation (RPA) platform that allows users to design, test, and deploy automation workflows. The platform features a user-friendly interface for creating automation scripts, real-time collaboration, and deployment capabilities.",
+      "role": "Full-Stack Developer, Designed and Developed the complete platform",
+      "duration": "1 Year (Initial Development)",
+      "problem": "At the time, there were limited options for cloud-based RPA tools that offered real-time collaboration and a comprehensive design interface. Existing solutions were either too complex or lacked essential features for effective automation design.",
+      "process": "As I myself designed few RPA workflows, I knew the pain points of existing RPA tools. I started by defining the core features needed for the platform, such as a drag-and-drop interface for workflow design, real-time collaboration, and deployment capabilities. I then created wireframes and prototypes to visualize the user experience. The frontend was built using Angular with TypeScript, while the backend was developed using NodeTs with Socket.IO for real-time communication. MongoDB was used for data storage, and Redis for connecting distributed windows services.",
+      "solution": "The resulting platform provides a seamless user experience for designing and deploying RPA workflows. Users can create automation scripts using a visual interface, collaborate in real-time with team members, and deploy their workflows to run on cloud infrastructure. The platform also includes features like version control, error handling, and performance monitoring.",
+      "outcome": "The platform was successfully launched and adopted by several enterprises, significantly reducing the time required to design and deploy automation workflows. It received positive feedback for its intuitive interface and robust feature set, leading to increased productivity in automation tasks.",
+      "learnings": "Building a cloud-based RPA platform provided valuable insights into real-time collaboration, distributed systems, and user experience design. I learned how to effectively manage state in a collaborative environment and optimize performance for complex workflows. Additionally, integrating real-time features with Socket.IO enhanced my understanding of WebSocket communication.",
+      "fullImages": [
+        "assets/images/cloud-homepage.png",
+        "assets/images/cloud-landing.png"
+      ]
+    },
+    {
+      "id": "cloud-rpa-governance",
+      "ownership": "Organization",
+      "title": "Cloud RPA Governance",
+      "category": [
+        "Full-Stack",
+        "Web Sockets",
+        "Real-Time",
+        "Angular",
+        "Typescript",
+        "Web API's",
+        "Dot Net Core",
+        "C#",
+        "MSSQL",
+        "SignalR"
+      ],
+      "thumbnail": "assets/images/governor.png",
+      "shortDescription": "Governance tool for RPA platform, enabling users to monitor and manage automation workflows, scheduling, credential management, reporting.",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "D3.js",
+        "Chart.js",
+        "SCSS",
+        "Typescript",
+        "Web API's",
+        "Dot Net Core",
+        "C#",
+        "MSSQL",
+        "SignalR"
+      ],
+      "liveSiteUrl": "#",
+      "githubRepoUrl": "#",
+      "overview": "This project involved building a governance tool for the RPA platform, enabling users to monitor and manage their automation workflows effectively. The tool provides insights into workflow performance, resource utilization, scheduling of automations, credential management, qeueue management, and error handling and reporting.",
+      "role": "Full-Stack Developer",
+      "duration": "6 months",
+      "problem": "The Cloud RPA platform needed a robust governance tool to help users monitor their automation workflows, manage resources, and ensure compliance with organizational policies.",
+      "process": "I collaborated with stakeholders to define the key features required for the governance tool. I designed the user interface using Angular and TypeScript, focusing on data visualization and user experience. The backend was developed using .NET Core with C#, providing real-time data access using SignalR. I implemented D3.js and Chart.js for interactive data visualizations, allowing users to gain insights into their automation workflows.",
+      "solution": "The governance tool features a dashboard that displays key metrics such as workflow performance, resource utilization, and error rates. Users can view detailed reports, manage credentials, schedule automations, and handle errors effectively. The tool also includes role-based access control to ensure compliance with organizational policies.",
+      "outcome": "The governance tool was successfully integrated into the Cloud RPA platform, providing users with a comprehensive solution for managing their automation workflows. It received positive feedback for its intuitive interface and powerful data visualization capabilities, leading to improved decision-making and resource management.",
+      "learnings": "Building the governance tool enhanced my skills in data visualization, real-time data access, and user experience design. I learned how to effectively present complex data in a user-friendly manner and implement role-based access control for secure governance. Additionally, integrating D3.js and Chart.js provided valuable experience in creating interactive visualizations that enhance user engagement.",
+      "fullImages": [
+        "assets/images/governor.png",
+        "assets/images/governor-home.png"
+      ]
+    },
+    {
+      "id": "cloud-rpa-services",
+      "title": "Cloud RPA Services",
+      "ownership": "Organization",
+      "category": [
+        "Microservices",
+        "C#",
+        "Windows Service",
+        "Dot Net Core",
+        "SignalR",
+        "Socket.IO",
+        "Named Pipes",
+        "Electron"
+      ],
+      "thumbnail": "assets/images/micro.png",
+      "shortDescription": "Set of Microservices for Cloud RPA Platform, consisting of several windfows services, enabling users to run automation workflows on distributed Windows services, Electron app for desktop automation, and real-time communication using SignalR and Socket.IO.",
+      "technologies": [
+        "C#",
+        "Dot Net Core",
+        "Windows Services",
+        "SignalR",
+        "Socket.IO",
+        "Microservices Architecture",
+        "Named Pipes",
+        "Electron"
+      ],
+      "liveSiteUrl": "#",
+      "githubRepoUrl": "#",
+      "overview": "This project involved developing a set of microservices to support the Cloud RPA platform, enabling users to run automation workflows on distributed Windows services. The microservices architecture allows for scalability and flexibility in managing automation tasks.",
+      "role": "Full-Stack Developer",
+      "duration": "1 Year (Initial Development)",
+      "problem": "To support the Cloud RPA platform, we needed a robust microservices architecture that could handle distributed automation tasks efficiently. The goal was to create services that could run on multiple Windows machines, allowing for parallel execution of automation workflows.",
+      "process": "I started by defining the core microservices required for the platform, such as task scheduling, execution, and monitoring. I designed the architecture to ensure loose coupling between services, allowing for independent scaling and deployment. The microservices were developed using .NET Core with C#, leveraging Windows Services for task execution. I implemented SignalR and Socket.IO for communication between services and integrated with the Cloud RPA platform for seamless workflow management.",
+      "solution": "The resulting microservices architecture provides a scalable and flexible solution for running automation workflows on distributed Windows services. Users can schedule tasks, monitor execution status, and handle errors effectively. The architecture allows for easy addition of new services as needed, ensuring the platform can grow with user requirements.",
+      "outcome": "The microservices were successfully deployed and integrated into the Cloud RPA platform, enabling users to run automation workflows on distributed Windows services. The architecture has proven to be robust and scalable, allowing for efficient management of automation tasks across multiple machines.",
+      "learnings": "Building the microservices architecture provided valuable insights into distributed systems, service communication, and scalability. I learned how to design services for loose coupling and independent deployment, as well as how to effectively manage state in a distributed environment. Additionally, integrating SignalR and Socket.IO enhanced my understanding of real-time communication in microservices."
+    },
+    {
+      "id": "moments",
+      "title": "Moments - Upload and Tag Photos",
+      "ownership": "Personal",
+      "category": [
+        "Full-Stack",
+        "Angular",
+        "NodeTS",
+        "MongoDB",
+        "Multer",
+        "Typescript"
+      ],
+      "thumbnail": "assets/images/moment-login.png",
+      "shortDescription": "Personal project to upload and tag photos",
+      "technologies": [
+        "Angular",
+        "NodeTS",
+        "Express.js",
+        "MongoDB",
+        "SCSS",
+        "Multer",
+        "TypeScript"
+      ],
+      "liveSiteUrl": "https://moments.rahulmitra.dev",
+      "githubRepoUrl": "https://github.com/rahul-mitra/MomentsUI",
+      "overview": "This project is a personal initiative to create a photo management application where users can upload, tag, and organize their photos. The application features a user-friendly interface for uploading images, adding tags, and searching for photos based on tags.",
+      "role": "Full-Stack Developer",
+      "duration": "4 Days",
+      "problem": "Managing personal photos can be cumbersome, especially when trying to find specific images among a large collection. Existing solutions often lack flexibility in tagging and organizing photos.",
+      "process": "I started by defining the core features needed for the photo management application, such as image upload, tagging, and search functionality. I designed the user interface using Angular with TypeScript, focusing on simplicity and ease of use. The backend was developed using NodeTS with Express.js, and MongoDB was used for storing image metadata and tags. I implemented Multer for handling file uploads and managing image storage.",
+      "solution": "The resulting application allows users to easily upload photos, add tags and search for images based on tags. The user interface is designed to be intuitive, enabling quick access to uploaded photos and their associated tags. The application also supports image previews and basic metadata display.",
+      "outcome": "The photo management application was successfully developed and deployed, providing a simple yet effective solution for managing personal photo collections. Users can easily upload, tag, and search for photos, enhancing their ability to organize and retrieve images.",
+      "learnings": "Building this photo management application provided valuable experience in handling file uploads, managing image metadata, and implementing search functionality. I learned how to effectively use Multer for file handling in Node.js and how to design a user-friendly interface for photo management. Additionally, integrating Angular with NodeTS enhanced my skills in full-stack development and TypeScript.",
+      "fullImages": [
+        "assets/images/moment-login.png",
+        "assets/images/moment-moments.png",
+        "assets/images/moment-upload.png"
+      ]
+    },
+    {
+      "id": "cube-realtime",
+      "title": "Cube Real-Time Demo",
+      "ownership": "Personal",
+      "category": [
+        "Full-Stack",
+        "Angular",
+        "NodeTS",
+        "Multer",
+        "Typescript",
+        "Web Sockets",
+        "Socket.IO"
+      ],
+      "thumbnail": "assets/images/cube.png",
+      "shortDescription": "Real-time demo application using Angular and Node.js, showcasing real-time data updates with WebSockets.",
+      "technologies": [
+        "Angular",
+        "NodeTS",
+        "Express.js",
+        "TypeScript",
+        "Socket.IO",
+        "three.js"
+      ],
+      "liveSiteUrl": "https://cube.rahulmitra.dev",
+      "githubRepoUrl": "https://github.com/rahul-mitra/CubeMotionRealtimeUI",
+      "overview": "This is a simple demo application that showcases real-time data updates using Angular and Node.js. The application allows users to join a room and change a cube's color in real-time and rotate it using mouse drag. It demonstrates the use of WebSockets for real-time communication between the client and server.",
+      "role": "Full-Stack Developer",
+      "duration": "1 Day",
+      "problem": "Real-time applications often require efficient communication between the client and server to update data instantly. This demo aims to showcase how to implement real-time features using WebSockets.",
+      "process": "I started by setting up a basic Angular application and a Node.js server. I implemented Socket.IO for real-time communication, allowing the client to send and receive messages instantly. The frontend was designed to display a cube that can change color and rotate based on user interactions.",
+      "solution": "The resulting application allows users to join a room and interact with a cube in real-time. Users can change the cube's color and rotate it by dragging the mouse, with all changes reflected instantly across all connected clients. The application demonstrates the power of WebSockets for building interactive real-time applications.",
+      "outcome": "The real-time demo application was successfully developed and deployed, providing a simple yet effective demonstration of real-time data updates. Users can interact with the cube in real-time, showcasing the capabilities of WebSockets and Socket.IO.",
+      "learnings": "Building this real-time demo application provided valuable experience in implementing WebSockets and real-time communication in Angular applications. I also used three - Javascript 3d library to render the cube and learned basics of 3D rendering in the browser.",
+      "fullImages": [
+        "assets/images/cube.png"
+      ]
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+      "author": "Client Name",
+      "title": "CTO",
+      "company": "Tech Solutions Inc.",
+      "avatar": "[https://placehold.co/50x50/B39DDB/FFFFFF?text=CN](https://placehold.co/50x50/B39DDB/FFFFFF?text=CN)"
+    },
+    {
+      "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+      "author": "Colleague Name",
+      "title": "Senior UI/UX Designer",
+      "company": "Creative Agency"
+    }
+  ],
+  "socialLinks": [
+    {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/rahul-mitra-2313aa17b/",
+      "iconSvgPath": ""
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/rahul-mitra",
+      "iconSvgPath": ""
+    }
+  ],
+  "contactInfo": {
+    "email": "rahul1991mitra@gmail.com",
+    "phone": "+91-7000593372"
+  },
+  "cvLink": "assets/data/Rahul-Mitra-Resume.pdf",
+
+  "experiences": [
+    {
+      "id": "exp-innowise-senior-software-engineer",
+      "organization": "InnoWise LLC",
+      "location": "Pune, India",
+      "role": "Senior Software Engineer",
+      "duration": "Jul 2021 - Present",
+      "startDate": "2021-07-01",
+      "endDate": "Present",
+      "descriptionPoints": [
+        "Created several microservices for a cloud-based RPA platform, focusing on building scalable and maintainable applications using Angular, Node.js, and .NET Core.",
+        "Designed and implemented user interfaces using Angular and TypeScript, ensuring a responsive and intuitive user experience.",
+        "Worked on Azure Cloud Services, deploying and managing microservices for the RPA platform.",
+        "Created Azure VM instances on the fly using Azure SDK, for a project that required dynamic resource allocation.",
+        "Created Installers for Windows Services using Visual Studio Installer Projects and InnoSetup, ensuring smooth deployment and configuration of services.",
+        "Designed dashboards for document understanding and data extraction, integrating with Azure Cognitive Services for OCR and text analysis.",
+        "Worked on several real-time features using Socket.IO, enabling collaborative workflow design and execution.",
+        "Worked on Azure Communication Services for real-time communication and collaboration features.",
+        "Implemented new features and bug fixes across various modules, ensuring high code quality and adherence to agile methodologies."
+      ],
+      "technologiesUsed": [
+        "Angular",
+        "C#",
+        "VB.NET",
+        "Windows Services",
+        "Dot Net Core",
+        "SCSS",
+        "Git",
+        "MongoDB",
+        "MSSQL",
+        "SignalR",
+        "Socket.IO",
+        "Redis",
+        "TypeScript",
+        "Node.js",
+        "Express.js"
+      ],
+      "logoUrl": "https://innowise.us/images/iw-logo-png.png"
+    },
+    {
+      "id": "exp-innowise-software-engineer",
+      "organization": "InnoWise LLC",
+      "location": "Pune, India",
+      "role": "Software Engineer",
+      "duration": "Jul 2020 - Jun 2021",
+      "startDate": "2020-07-01",
+      "endDate": "2021-06-30",
+      "descriptionPoints": [
+        "Worked on creating a cloud-based RPA platform, focusing on building scalable and maintainable applications using Angular, Node.js, and .NET Core.",
+        "Designed and implemented user interfaces using Angular and TypeScript, ensuring a responsive and intuitive user experience.",
+        "Developed RESTful APIs using Node.js and Express.js, integrating with MongoDB for data storage and retrieval.",
+        "Implemented real-time features using Socket.IO, enabling collaborative workflow design and execution.",
+        "Implemented new features and bug fixes across various modules, ensuring high code quality and adherence to agile methodologies.",
+        "Participated in code reviews, providing constructive feedback and ensuring best practices were followed.",
+        "Assisted in database design and optimization for SQL-based and No-SQL systems."
+      ],
+      "technologiesUsed": [
+        "Angular",
+        "C#",
+        "VB.NET",
+        "Windows Services",
+        "Dot Net Core",
+        "SCSS",
+        "Git",
+        "MongoDB",
+        "MSSQL",
+        "SignalR",
+        "Socket.IO",
+        "Redis",
+        "TypeScript",
+        "Node.js",
+        "Express.js"
+      ],
+      "logoUrl": "https://innowise.us/images/iw-logo-png.png"
+    },
+    {
+      "id": "exp-innowise-associate-engineer",
+      "organization": "InnoWise LLC",
+      "location": "Pune, India",
+      "role": "Associate Software Engineer",
+      "duration": "Mar 2019 - Jul 2020",
+      "startDate": "2019-03-19",
+      "descriptionPoints": [
+        "Worked as RPA developer on Uipath platform, automating business processes and improving operational efficiency.",
+        "Designed and implemented automation workflows, worked with domains like finance and HR.",
+        "Collaborated with cross-functional teams to gather requirements and deliver solutions that met business needs.",
+        "Used RE Framework to develop robust and scalable automation solutions.",
+        "Developed custom activities in C# to extend Uipath's capabilities."
+      ],
+      "technologiesUsed": [
+        "UiPath",
+        "C#",
+        "VB.NET",
+        "SQL"
+      ],
+      "logoUrl": "https://innowise.us/images/iw-logo-png.png"
+    }
+  ]
+}

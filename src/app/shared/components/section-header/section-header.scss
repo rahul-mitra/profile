@@ -1,0 +1,56 @@
+@import '../../../../styles.scss';
+
+.section-header {
+  margin-bottom: $spacing-xl;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    margin-bottom: $spacing-lg;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: $text-dark;
+    position: relative;
+    display: inline-block;
+    margin-bottom: $spacing-md;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 4px;
+      background-color: $primary-purple;
+      margin: $spacing-xxs auto 0 auto;
+      border-radius: 2px;
+
+      @media (max-width: 768px) {
+        height: 3px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: $text-medium;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
+  }
+}

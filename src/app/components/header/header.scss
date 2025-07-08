@@ -1,0 +1,151 @@
+
+@import '../../../styles.scss';
+
+.header {
+  background-color: #FFFFFF;
+  padding: $spacing-md 0;
+  border-bottom: 1px solid $bg-lighter;
+  box-shadow: 0 2px 8px rgba($text-dark, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: $font-family-heading;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $text-dark;
+  text-decoration: none;
+
+  span {
+    color: $primary-purple;
+  }
+}
+
+.desktop-nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    li {
+      margin-left: $spacing-xl;
+
+      a {
+        color: $text-medium;
+        font-weight: 500;
+        position: relative;
+        padding-bottom: 5px;
+
+        &:hover {
+          color: $primary-purple;
+          text-decoration: none;
+        }
+
+        &.active {
+          color: $primary-purple;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $primary-purple;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: $spacing-xs;
+  border-radius: $spacing-xxs;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $bg-lighter;
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+    color: $text-dark;
+  }
+}
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($bg-dark, 0.95);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  overflow-y: auto;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    li {
+      margin-bottom: $spacing-xl;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #FFFFFF;
+        font-family: $font-family-heading;
+        font-size: 1.8rem;
+        font-weight: 600;
+        padding: $spacing-sm;
+        display: block;
+
+        &:hover, &.active {
+          color: $secondary-purple;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

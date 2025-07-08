@@ -1,0 +1,59 @@
+// src/app/components/testimonials-page/testimonials-page.scss
+@import '../../../styles.scss';
+
+.testimonials-page-section {
+  background-color: $bg-light;
+  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-lg;
+  padding: $spacing-md 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+  }
+}
+
+.testimonial-card {
+  background-color: #FFFFFF;
+  border-radius: $spacing-sm;
+  box-shadow: 0 4px 15px rgba($text-dark, 0.08);
+  padding: $spacing-lg;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba($text-dark, 0.12);
+  }
+
+  .quote {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: $text-medium;
+    margin-bottom: $spacing-md;
+    line-height: 1.7;
+  }
+
+  .author {
+    font-weight: 600;
+    color: $primary-purple;
+    font-size: 1rem;
+    margin-top: auto;
+  }
+}
+
+.no-testimonials-message {
+  padding: $spacing-xl 0;
+  color: $text-medium;
+  font-size: 1.2rem;
+  text-align: center;
+  grid-column: 1 / -1;
+}
