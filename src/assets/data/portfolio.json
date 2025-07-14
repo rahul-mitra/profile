@@ -229,6 +229,172 @@
       "learnings": "Building the microservices architecture provided valuable insights into distributed systems, service communication, and scalability. I learned how to design services for loose coupling and independent deployment, as well as how to effectively manage state in a distributed environment. Additionally, integrating SignalR and Socket.IO enhanced my understanding of real-time communication in microservices."
     },
     {
+      "id": "data-validation-platform",
+      "ownership": "Organization",
+      "title": "Data Validation Platform",
+      "category": [
+        "Backend",
+        "AI Integration",
+        "Azure",
+        ".NET Core",
+        "REST APIs",
+        "SQL"
+      ],
+      "shortDescription": "Intelligent document processing and review system using Azure Document Intelligence with custom workflow logic and role-based access.",
+      "technologies": [
+        "Dot Net Core",
+        "Azure Document Intelligence",
+        "MailKit",
+        "SQL Server",
+        "REST APIs"
+      ],
+      "role": "Backend Developer",
+      "duration": "3 Months",
+      "overview": "Backend services for an RPA-integrated document validation platform where bots upload PDFs, Azure AI extracts data, and users review/edit with tracking, role-based workflows, and resubmission to custom models.",
+      "problem": "Needed an AI-powered backend to auto-extract and validate data from PDFs uploaded by bots, and manage corrections, approvals, and re-submissions.",
+      "process": "Integrated Azure Document Intelligence for extraction, created a workflow system with user roles, implemented time tracking, and connected email alerts using MailKit.",
+      "solution": "Built a robust system supporting document uploads, data correction, role-based validation, and re-submission paths with end-to-end tracking and audit logs.",
+      "outcome": "Streamlined document handling and significantly reduced manual validation effort, while maintaining traceability and compliance.",
+      "learnings": "Gained expertise in intelligent document processing (IDP), Azure AI services, and building scalable approval workflows with logging and notifications."
+    },
+    {
+      "id": "socketio-csharp-fork",
+      "ownership": "Open Source Contribution",
+      "title": "socket.io-client-csharp (Unofficial Fork)",
+      "category": [
+        "Open Source",
+        "Real-Time",
+        "C#",
+        ".NET"
+      ],
+      "shortDescription": "Fixed serialization and large payload handling in C# Socket.IO client for production use in real-time systems.",
+      "technologies": [
+        "C#",
+        "System.Text.Json",
+        "Newtonsoft.Json",
+        ".NET"
+      ],
+      "role": "Contributor & Maintainer (Unofficial Fork)",
+      "duration": "1 Month (Fix + Testing)",
+      "overview": "Contributed to socket.io-client-csharp to fix deserialization issues for large payloads and support pluggable serializers. PR not merged, but used across RPA systems.",
+      "problem": "Original client failed on large or complex JSON payloads and only supported System.Text.Json.",
+      "process": "Created a pluggable serializer interface, added Newtonsoft.Json support, ensured compatibility and stability via test coverage.",
+      "solution": "Enhanced the library to handle high-volume real-time communication, added event flexibility, and deployed the fork in production systems.",
+      "outcome": "Improved reliability and flexibility of real-time communication infrastructure across all RPA services.",
+      "learnings": "Deepened understanding of real-time comms, socket serialization pitfalls, and open-source contribution workflows."
+    },
+    {
+      "id": "named-pipe-framework",
+      "ownership": "Organization",
+      "title": "Custom Named Pipe Framework",
+      "category": [
+        "Backend",
+        "IPC",
+        ".NET Core",
+        "Windows",
+        "System Programming"
+      ],
+      "shortDescription": "A custom server-client framework for Named Pipe IPC in .NET supporting large data, events, and structured serialization.",
+      "technologies": [
+        "C#",
+        ".NET Core",
+        "System.IO.Pipes",
+        "Serialization",
+        "Binary",
+        "JSON"
+      ],
+      "role": "System Developer",
+      "duration": "2 Weeks",
+      "overview": "Designed a reusable IPC library in .NET Core to handle inter-process communication for high-volume and event-driven scenarios.",
+      "problem": ".NET Named Pipes lack built-in event handling, large message support, and structured serialization.",
+      "process": "Wrapped NamedPipeServerStream/ClientStream with event hooks (OnConnect, OnMessage, etc.), stream chunking, and serializer interfaces.",
+      "solution": "Enabled efficient, reliable communication between Robot, Executor, and Services for RPA execution layer.",
+      "outcome": "Adopted across all internal RPA subsystems for low-latency, secure, and extensible messaging.",
+      "learnings": "Enhanced low-level IPC and threading knowledge; implemented fail-safe event routing and stream processing."
+    },
+    {
+      "id": "script-executor-service",
+      "ownership": "Organization",
+      "title": "Script Executor Service",
+      "category": [
+        "System Tools",
+        ".NET Core",
+        "Linux",
+        "Windows",
+        "Security"
+      ],
+      "shortDescription": "Cross-platform service to remotely run PowerShell and Bash scripts for user provisioning and diagnostics.",
+      "technologies": [
+        ".NET Core",
+        "PowerShell",
+        "Bash",
+        "Linux",
+        "JWT Auth"
+      ],
+      "role": "Backend Systems Developer",
+      "duration": "1 Month",
+      "overview": "Secure, cross-platform console-based runner built with .NET Core, allowing authorized users to execute shell commands remotely.",
+      "problem": "Manual provisioning and system tasks were time-consuming and inconsistent across platforms.",
+      "process": "Developed authenticated APIs to run scripts, capture output, and route logs with command injection prevention.",
+      "solution": "Enabled remote user creation, configuration, and diagnostics with full audit logging and real-time tracking.",
+      "outcome": "Reduced manual effort and standardized operations across cloud-based and on-prem RPA environments.",
+      "learnings": "Strengthened cross-platform scripting, terminal IO handling, and security for remote command execution."
+    },
+    {
+      "id": "innomeet-calling-ui",
+      "ownership": "Organization",
+      "title": "Innomeet - Video Calling UI",
+      "category": [
+        "Frontend",
+        "WebRTC",
+        "Socket.IO",
+        "Angular"
+      ],
+      "shortDescription": "UI for web-based group and 1-on-1 calling app built during COVID lockdown.",
+      "technologies": [
+        "Angular",
+        "WebRTC",
+        "Socket.IO",
+        "SCSS"
+      ],
+      "role": "Frontend Developer",
+      "duration": "1 Month (Prototype)",
+      "overview": "Designed and developed a responsive UI for a WebRTC-based video calling platform built during COVID to support remote collaboration.",
+      "problem": "Teams needed an easy-to-use internal video chat system with minimum setup.",
+      "process": "Built interfaces for joining calls, managing participants, and handling real-time media using WebRTC and Socket.IO.",
+      "solution": "Offered a functional prototype with key features like mute, video toggling, and screen layout management.",
+      "outcome": "Although the project was shelved, it contributed valuable real-time UI design patterns later reused in production tools.",
+      "learnings": "Gained hands-on WebRTC experience and built intuition for low-latency UIs and media flow control."
+    },
+    {
+      "id": "swing-cab-aggregator",
+      "ownership": "Organization",
+      "title": "Swing - Cab Aggregation Platform",
+      "category": [
+        "Backend",
+        "Python",
+        "API Integration",
+        "Payments"
+      ],
+      "shortDescription": "Cab fare comparison platform integrating Uber, Ola, Meru, and Paytm.",
+      "technologies": [
+        "Python",
+        "Flask",
+        "REST APIs",
+        "Paytm",
+        "Uber API",
+        "Ola API"
+      ],
+      "role": "Backend Developer",
+      "duration": "1 Year",
+      "overview": "Developed backend services for a cab price comparison app allowing users to find and compare cab fares based on type and location.",
+      "problem": "Users had to check multiple apps for fare comparisons manually.",
+      "process": "Integrated APIs from Uber, Ola, Meru, and Jugnoo, and Paytm payment gateway for fare payments.",
+      "solution": "Users could instantly view available cabs, estimated fares, and book via redirection from a single interface.",
+      "outcome": "Streamlined experience for ride comparison and payment during early-stage cab aggregator competition.",
+      "learnings": "Deepened skills in third-party API integration, error fallback logic, and token-based authentication systems."
+    },
+    {
       "id": "moments",
       "title": "Moments - Upload and Tag Photos",
       "ownership": "Personal",
@@ -337,7 +503,6 @@
     "phone": "+91-7000593372"
   },
   "cvLink": "assets/data/Rahul-Mitra-Resume.pdf",
-
   "experiences": [
     {
       "id": "exp-innowise-senior-software-engineer",
