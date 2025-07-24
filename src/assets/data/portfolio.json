@@ -240,6 +240,7 @@
         "REST APIs",
         "SQL"
       ],
+      "thumbnail": "assets/images/validation-station.png",
       "shortDescription": "Intelligent document processing and review system using Azure Document Intelligence with custom workflow logic and role-based access.",
       "technologies": [
         "Dot Net Core",
@@ -255,11 +256,15 @@
       "process": "Integrated Azure Document Intelligence for extraction, created a workflow system with user roles, implemented time tracking, and connected email alerts using MailKit.",
       "solution": "Built a robust system supporting document uploads, data correction, role-based validation, and re-submission paths with end-to-end tracking and audit logs.",
       "outcome": "Streamlined document handling and significantly reduced manual validation effort, while maintaining traceability and compliance.",
-      "learnings": "Gained expertise in intelligent document processing (IDP), Azure AI services, and building scalable approval workflows with logging and notifications."
+      "learnings": "Gained expertise in intelligent document processing (IDP), Azure AI services, and building scalable approval workflows with logging and notifications.",
+      "fullImages": [
+        "assets/images/validation-station.png"
+      ]
     },
     {
       "id": "socketio-csharp-fork",
       "ownership": "Open Source",
+      "thumbnail": "assets/images/socket.io.jpg",
       "title": "socket.io-client-csharp (Unofficial Fork)",
       "category": [
         "Open Source",
@@ -276,16 +281,20 @@
       ],
       "role": "Contributor & Maintainer (Unofficial Fork)",
       "duration": "1 Month (Fix + Testing)",
-      "overview": "Contributed to socket.io-client-csharp to fix deserialization issues for large payloads and support pluggable serializers. PR not merged, but used across RPA systems.",
+      "overview": "Contributed to socket.io-client-csharp to fix deserialization issues for large payloads and support pluggable serializers. PR not merged, but used across Cloud RPA suite.",
       "problem": "Original client failed on large or complex JSON payloads and only supported System.Text.Json.",
       "process": "Created a pluggable serializer interface, added Newtonsoft.Json support, ensured compatibility and stability via test coverage.",
       "solution": "Enhanced the library to handle high-volume real-time communication, added event flexibility, and deployed the fork in production systems.",
       "outcome": "Improved reliability and flexibility of real-time communication infrastructure across all RPA services.",
-      "learnings": "Deepened understanding of real-time comms, socket serialization pitfalls, and open-source contribution workflows."
+      "learnings": "Deepened understanding of real-time comms, socket serialization pitfalls, and open-source contribution workflows.",
+      "fullImages": [
+        "assets/images/socket.io.jpg"
+      ]
     },
     {
       "id": "named-pipe-framework",
       "ownership": "Organization",
+      "thumbnail": "assets/images/pipes.png",
       "title": "Custom Named Pipe Framework",
       "category": [
         "Backend",
@@ -310,10 +319,14 @@
       "process": "Wrapped NamedPipeServerStream/ClientStream with event hooks (OnConnect, OnMessage, etc.), stream chunking, and serializer interfaces.",
       "solution": "Enabled efficient, reliable communication between Robot, Executor, and Services for RPA execution layer.",
       "outcome": "Adopted across all internal RPA subsystems for low-latency, secure, and extensible messaging.",
-      "learnings": "Enhanced low-level IPC and threading knowledge; implemented fail-safe event routing and stream processing."
+      "learnings": "Enhanced low-level IPC and threading knowledge; implemented fail-safe event routing and stream processing.",
+      "fullImages":[
+        "assets/images/pipes.png"
+      ]
     },
     {
       "id": "script-executor-service",
+      "thumbnail": "assets/images/script-executor.png",
       "ownership": "Organization",
       "title": "Script Executor Service",
       "category": [
@@ -338,12 +351,16 @@
       "process": "Developed authenticated APIs to run scripts, capture output, and route logs with command injection prevention.",
       "solution": "Enabled remote user creation, configuration, and diagnostics with full audit logging and real-time tracking.",
       "outcome": "Reduced manual effort and standardized operations across cloud-based and on-prem RPA environments.",
-      "learnings": "Strengthened cross-platform scripting, terminal IO handling, and security for remote command execution."
+      "learnings": "Strengthened cross-platform scripting, terminal IO handling, and security for remote command execution.",
+      "fullImages":[
+        "assets/images/script-executor.png"
+      ]
     },
     {
       "id": "innomeet-calling-ui",
       "ownership": "Organization",
       "title": "Innomeet - Video Calling UI",
+      "thumbnail":"assets/images/innomeet.png",
       "category": [
         "Frontend",
         "WebRTC",
@@ -364,11 +381,15 @@
       "process": "Built interfaces for joining calls, managing participants, and handling real-time media using WebRTC and Socket.IO.",
       "solution": "Offered a functional prototype with key features like mute, video toggling, and screen layout management.",
       "outcome": "Although the project was shelved, it contributed valuable real-time UI design patterns later reused in production tools.",
-      "learnings": "Gained hands-on WebRTC experience and built intuition for low-latency UIs and media flow control."
+      "learnings": "Gained hands-on WebRTC experience and built intuition for low-latency UIs and media flow control.",
+      "fullImages":[
+        "assets/images/innomeet.png"
+      ]
     },
     {
       "id": "swing-cab-aggregator",
       "ownership": "Organization",
+      "thumbnail": "assets/images/swing.png",
       "title": "Swing - Cab Aggregation Platform",
       "category": [
         "Backend",
@@ -392,7 +413,10 @@
       "process": "Integrated APIs from Uber, Ola, Meru, and Jugnoo, and Paytm payment gateway for fare payments.",
       "solution": "Users could instantly view available cabs, estimated fares, and book via redirection from a single interface.",
       "outcome": "Streamlined experience for ride comparison and payment during early-stage cab aggregator competition.",
-      "learnings": "Deepened skills in third-party API integration, error fallback logic, and token-based authentication systems."
+      "learnings": "Deepened skills in third-party API integration, error fallback logic, and token-based authentication systems.",
+      "fullImages":[
+        "assets/images/swing.png"
+      ]
     },
     {
       "id": "moments",
