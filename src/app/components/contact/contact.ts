@@ -15,61 +15,61 @@ import { SocialLink } from '../../shared/models/social-link';
   standalone: true,
   imports: [CommonModule, SectionHeaderComponent, ButtonComponent, ReactiveFormsModule, FormsModule],
   template: `
-    <section class="contact-section section-padding container">
-      <app-section-header
-        [title]="'Get In Touch'"
-        [subtitle]="'Have a project in mind or just want to chat? Feel free to reach out!'"
-      ></app-section-header>
+    <section class="contact-page relative overflow-hidden pb-20 section-padding">
+      <div class="glow-sphere"></div>
+      
+      <div class="container relative z-10 pt-10">
+        <app-section-header
+          [title]="'Get In Touch'"
+          [subtitle]="'Have a project in mind or just want to chat? I\\'m always open to discussing new ideas.'"
+        ></app-section-header>
 
-      <div class="contact-content">
-        <!-- <form [formGroup]="contactForm()" (ngSubmit)="onSubmit()" class="contact-form">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" formControlName="name" placeholder="Rahul Mitra">
-            <div *ngIf="contactForm().get('name')?.invalid && (contactForm().get('name')?.dirty || contactForm().get('name')?.touched)" class="error-message">
-              <span *ngIf="contactForm().get('name')?.errors?.['required']">Name is required.</span>
+        <div class="contact-grid grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 max-w-7xl mx-auto mt-12">
+          
+          <!-- Column: Info & Socials -->
+          <div class="lg:col-span-12 space-y-8 animate-slide-right text-center">
+            <div class="space-y-4 max-w-3xl mx-auto">
+              <h3 class="text-4xl md:text-5xl font-bold text-white">Let's <span class="text-gradient">connect</span>.</h3>
+              <p class="text-slate-400 text-lg leading-relaxed">
+                If you'd like to discuss a project or have a question about RAG LLM or Azure cloud architecture, please feel free to reach out. I'm always happy to connect and explore potential collaborations.
+              </p>
+            </div>
+
+            <div class="space-y-4">
+               <!-- Contact Cards -->
+               <div class="glass-panel p-6 flex items-center justify-center gap-6 group hover:border-emerald-500/30 transition-all duration-500 max-w-lg mx-auto">
+                  <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-500/60 mb-1">Email Me</p>
+                    <a [href]="'mailto:' + contactEmail()" class="text-white font-semibold text-lg hover:text-emerald-400 transition-colors">{{ contactEmail() }}</a>
+                  </div>
+               </div>
+
+               <div class="glass-panel p-6 flex items-center justify-center gap-6 group hover:border-emerald-500/30 transition-all duration-500 max-w-lg mx-auto">
+                  <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold uppercase tracking-widest text-emerald-500/60 mb-1">Location</p>
+                    <p class="text-white font-semibold text-lg">Chhattisgarh, India (Available Worldwide)</p>
+                  </div>
+               </div>
+            </div>
+
+            <!-- Social Links Grid -->
+            <div class="space-y-4 pt-4">
+              <h4 class="text-sm font-bold uppercase tracking-widest text-slate-500">Connect with me</h4>
+              <div class="flex flex-wrap gap-4 justify-center">
+                <a *ngFor="let link of socialLinks()" [href]="link.url" target="_blank" rel="noopener noreferrer" 
+                   class="glass-panel px-6 py-3 flex items-center gap-3 text-white font-medium hover:bg-emerald-500/10 hover:border-emerald-500/40 transition-all group">
+                   <span>{{ link.name }}</span>
+                   <svg class="w-4 h-4 text-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
             </div>
           </div>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email" placeholder="your@email.com">
-            <div *ngIf="contactForm().get('email')?.invalid && (contactForm().get('email')?.dirty || contactForm().get('email')?.touched)" class="error-message">
-              <span *ngIf="contactForm().get('email')?.errors?.['required']">Email is required.</span>
-              <span *ngIf="contactForm().get('email')?.errors?.['email']">Enter a valid email.</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" formControlName="subject" placeholder="Subject of your message">
-            <div *ngIf="contactForm().get('subject')?.invalid && (contactForm().get('subject')?.dirty || contactForm().get('subject')?.touched)" class="error-message">
-              <span *ngIf="contactForm().get('subject')?.errors?.['required']">Subject is required.</span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" formControlName="message" rows="6" placeholder="Your message..."></textarea>
-            <div *ngIf="contactForm().get('message')?.invalid && (contactForm().get('message')?.dirty || contactForm().get('message')?.touched)" class="error-message">
-              <span *ngIf="contactForm().get('message')?.errors?.['required']">Message is required.</span>
-            </div>
-          </div>
-
-          <div class="text-center">
-
-            <app-button [label]="'Send Message'" [styleType]="'primary'" [type]="'submit'"></app-button>
-
-          </div>
-        </form> -->
-
-        <div class="social-links-contact text-center">
-          <h3>Find me on:</h3>
-          <div class="links-grid">
-            <a *ngFor="let link of socialLinks()" [href]="link.url" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
-          </div>
-          <p class="email-contact" *ngIf="contactEmail()">Or email me directly at: <a [href]="'mailto:' + contactEmail()">{{ contactEmail() }}</a></p>
-
         </div>
       </div>
     </section>
@@ -98,29 +98,12 @@ export class ContactComponent {
   socialLinks = toSignal(this.dataService.getSocialLinks(), { initialValue: [] as SocialLink[] });
 
   onSubmit() {
-    // console.log('onSubmit called!');
     const form = this.contactForm();
-
     if (form.valid) {
-      // console.log('Form is valid. Submitting!', form.value);
-
-
-
-
-
-
-
-
-
-
-
-
       form.reset();
       this.cdr.detectChanges();
     } else {
-      // console.log('Form is invalid. Marking all fields as touched.');
       form.markAllAsTouched();
-
       this.cdr.detectChanges();
     }
   }

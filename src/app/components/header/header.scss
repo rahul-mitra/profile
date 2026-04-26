@@ -1,15 +1,13 @@
-
 @import '../../../styles.scss';
 
 .header {
-  background-color: #FFFFFF;
-  padding: $spacing-md 0;
-  border-bottom: 1px solid $bg-lighter;
-  box-shadow: 0 2px 8px rgba($text-dark, 0.05);
-  position: sticky;
+  @include glass(16px, rgba(2, 6, 23, 0.8), rgba(255, 255, 255, 0.05));
+  padding: var(--spacing-sm) 0;
+  position: fixed; /* Keep it fixed for better glass effect overlay */
   top: 0;
   z-index: 1000;
   width: 100%;
+  transition: all var(--transition-speed) var(--transition-fluid);
 }
 
 .header-content {
@@ -20,13 +18,14 @@
 
 .logo {
   font-family: $font-family-heading;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: $text-dark;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
   text-decoration: none;
+  letter-spacing: -0.05em;
 
   span {
-    color: $primary-purple;
+    @include text-gradient();
   }
 }
 
@@ -36,31 +35,38 @@
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 
     li {
-      margin-left: $spacing-xl;
+      margin-left: var(--spacing-lg);
 
       a {
-        color: $text-medium;
+        color: var(--text-secondary);
         font-weight: 500;
+        font-size: 0.95rem;
         position: relative;
-        padding-bottom: 5px;
+        transition: all var(--transition-speed) var(--transition-fluid);
 
         &:hover {
-          color: $primary-purple;
-          text-decoration: none;
+          color: var(--emerald-400);
+          text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
         }
 
         &.active {
-          color: $primary-purple;
+          color: var(--text-primary);
+          font-weight: 700;
+          
           &::after {
             content: '';
             position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background-color: $primary-purple;
+            left: 50%;
+            bottom: -6px;
+            width: 4px;
+            height: 4px;
+            background-color: var(--emerald-400);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            @include glow(var(--emerald-400), 0.5);
           }
         }
       }
@@ -70,21 +76,22 @@
 
 .menu-toggle {
   display: none;
-  background: none;
-  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
-  padding: $spacing-xs;
-  border-radius: $spacing-xxs;
-  transition: background-color 0.2s ease;
+  padding: 8px;
+  border-radius: 8px;
+  color: var(--text-primary);
+  transition: all 0.3s var(--transition-fluid);
 
   &:hover {
-    background-color: $bg-lighter;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--emerald-500);
   }
 
   svg {
-    width: 28px;
-    height: 28px;
-    color: $text-dark;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -94,16 +101,15 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba($bg-dark, 0.95);
+  height: 100vh;
+  @include glass(20px, rgba(2, 6, 23, 0.95));
   flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  overflow-y: auto;
+  transition: all 0.4s var(--transition-fluid);
 
   &.open {
     opacity: 1;
@@ -118,24 +124,29 @@
     text-align: center;
 
     li {
-      margin-bottom: $spacing-lg;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      margin-bottom: var(--spacing-xl);
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s var(--transition-fluid);
 
       a {
-        color: #FFFFFF;
+        color: var(--text-primary);
         font-family: $font-family-heading;
-        font-size: 1.8rem;
-        font-weight: 600;
-        padding: $spacing-sm;
-        display: block;
-
+        font-size: 2rem;
+        font-weight: 700;
+        
         &:hover, &.active {
-          color: $secondary-purple;
+          color: var(--emerald-400);
         }
       }
+    }
+  }
+
+  &.open ul li {
+    transform: translateY(0);
+    opacity: 1;
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) { transition-delay: #{$i * 0.1}s; }
     }
   }
 }

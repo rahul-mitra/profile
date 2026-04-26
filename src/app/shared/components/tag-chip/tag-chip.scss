@@ -3,24 +3,26 @@
 .tag-chip {
   display: inline-flex;
   align-items: center;
-  background-color: $bg-lighter;
-  color: $text-dark;
-  padding: $spacing-xxs $spacing-xs;
-  border-radius: $spacing-xxs;
-  font-size: 0.85rem;
-  font-family: $font-family-mono;
-  font-weight: 500;
+  @include glass(4px, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.1));
+  color: var(--slate-300);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-family: var(--font-family-body);
+  font-weight: 600;
   white-space: nowrap;
-  box-shadow: 0 1px 3px rgba($text-dark, 0.08);
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: all var(--transition-speed) var(--transition-fluid);
 
   &:hover {
-    background-color: darken($bg-lighter, 3%);
-    transform: translateY(-1px);
+    background: rgba(16, 185, 129, 0.1);
+    border-color: var(--emerald-500);
+    color: var(--emerald-400);
+    transform: translateY(-2px);
+    @include glow(var(--emerald-500), 0.2);
   }
 
   @media (max-width: 480px) {
-    font-size: 0.8rem;
-    padding: $spacing-xxs $spacing-xs;
+    font-size: 0.75rem;
+    padding: 3px 10px;
   }
 }

@@ -1,65 +1,70 @@
-/* src/app/modules/projects/pages/projects-page/projects-page.scss */
-@import '../../../../../styles.scss'; /* Corrected path to global styles */
+@import '../../../../../styles.scss';
 
-.projects-page-section {
-  background-color: #f8f9fa; /* A light background for the page */
-  min-height: calc(100vh - #{$header-height} - #{$footer-height}); /* Ensure it takes up screen height */
+.projects-page {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-base);
 
-  .container {
-    /* Container styles handled by global styles */
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url('/assets/images/flxu.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.17;
+    pointer-events: none;
   }
 }
 
-::ng-deep .category-filters {
+.relative-z {
+  position: relative;
+  z-index: 2;
+}
+
+.glow-sphere {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.category-filters {
   display: flex;
-  flex-wrap: wrap; /* Allow chips to wrap to next line */
-  justify-content: center; /* Center align the chips */
-  gap: $spacing-sm; /* Spacing between chips */
-  margin-bottom: $spacing-xl; /* Space below the filters and above project list */
-
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-md);
+  
   app-tag-chip {
-    cursor: pointer; /* Indicate that chips are clickable */
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease; /* Ensure transition on component host */
+    cursor: pointer;
+    transition: all var(--transition-speed) var(--transition-fluid);
 
-    // Hover styles applied to the host element
-    &:hover {
-      .tag-chip { /* Target the inner span on hover of the host */
-        background-color: $primary-purple-light; /* Lighter purple on hover */
-        color: $primary-purple-dark;
-      }
-      transform: translateY(-2px); /* Slight lift */
-      box-shadow: 0 2px 8px rgba($primary-purple, 0.1);
-    }
-
-    // NEW: Enhanced active state, targeting the inner span
     &.active {
-      .tag-chip { /* Target the inner span when host is active */
-        background-color: $primary-purple; /* Primary purple background */
-        color: #FFFFFF; /* White text */
-        font-weight: 600; /* Bolder text */
-        border: 2px solid $secondary-purple; /* Add a contrasting border */
+      ::ng-deep .tag-chip {
+        background: var(--emerald-500) !important;
+        color: var(--emerald-950) !important;
+        @include glow(var(--emerald-500), 0.4);
+        font-weight: 700;
       }
-      box-shadow: 0 4px 10px rgba($primary-purple, 0.3); /* Stronger shadow */
-      transform: translateY(-1px); /* Keep slightly lifted */
     }
-  }
-
-  @media (max-width: 768px) {
-    gap: $spacing-xs; /* Tighter gap on smaller screens */
-    margin-bottom: $spacing-lg;
-    padding: 0 $spacing-sm; /* Add some horizontal padding to prevent overflow */
   }
 
   @media (max-width: 480px) {
-    justify-content: flex-start; /* Left-align on very small screens if many categories */
-    overflow-x: auto; /* Allow horizontal scrolling if chips don't fit */
-    white-space: nowrap; /* Prevent chips from wrapping if horizontal scroll is enabled */
-    padding-bottom: $spacing-xxs; /* Add some padding for scrollbar visibility */
-    // Hide scrollbar but keep functionality
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    &::-webkit-scrollbar { display: none; }
+    scrollbar-width: none;
   }
 }

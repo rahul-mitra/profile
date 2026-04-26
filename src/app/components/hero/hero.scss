@@ -1,4 +1,3 @@
-
 @import '../../../styles.scss';
 
 .hero-section {
@@ -6,122 +5,128 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
-  background-color: $bg-light;
-  padding: $spacing-xl 0;
-  text-align: center;
+  min-height: 90vh;
   position: relative;
   overflow: hidden;
+  text-align: center;
+  background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
 
-
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInSlideUp 1s ease-out forwards;
-  animation-delay: 0.2s;
-
-  @media (max-width: 768px) {
-    min-height: 70vh;
-    padding: $spacing-lg 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.2;
+    pointer-events: none;
   }
 }
 
-
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero-content {
+  position: relative;
+  z-index: 10;
 }
 
+.glow-sphere {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  animation: pulseGlow 10s infinite alternate var(--transition-fluid);
+}
+
+@keyframes pulseGlow {
+  from { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  to { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
 
 .hero-name {
-  font-size: 4.5rem;
-  font-weight: 700;
-  margin-bottom: $spacing-sm;
-
-
-  background: linear-gradient(to right, $primary-purple, $secondary-purple, $primary-purple);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 2s linear infinite;
-
-  @media (max-width: 768px) {
-    font-size: 3.5rem;
-  }
-  @media (max-width: 480px) {
-    font-size: 2.8rem;
+  margin-bottom: var(--spacing-xs);
+  
+  .text-gradient {
+    filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.3));
   }
 }
-
-
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
-}
-
 
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 600;
-  color: $primary-purple;
-  margin-bottom: $spacing-md;
-  line-height: 1.2;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-  @media (max-width: 480px) {
-    font-size: 1.6rem;
-  }
+  color: var(--slate-200);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-lg);
 }
 
 .hero-tagline {
-  font-size: 1.4rem;
-  color: $text-medium;
-  max-width: 800px;
-  margin: 0 auto $spacing-xl auto;
-  line-height: 1.7;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-    margin-bottom: $spacing-lg;
-  }
-  @media (max-width: 480px) {
-    font-size: 1.05rem;
-  }
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
 }
 
 .hero-actions {
   display: flex;
-  gap: $spacing-md;
+  gap: var(--spacing-md);
   justify-content: center;
-  flex-wrap: wrap;
-
-
-  .button {
-    animation: fadeInSlideUp 0.8s ease-out forwards;
-    opacity: 0;
-    transform: translateY(20px);
-    &:first-of-type {
-      animation-delay: 0.6s;
-    }
-    &:last-of-type {
-      animation-delay: 0.8s;
-    }
-  }
-
+  
   @media (max-width: 480px) {
     flex-direction: column;
-    gap: $spacing-sm;
+    align-items: center;
+  }
+}
+
+/* Floating Glass Elements */
+.floating-glass {
+  position: absolute;
+  @include glass(20px, rgba(255,255,255, 0.02));
+  border-radius: 20px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-1 {
+  width: 150px;
+  height: 150px;
+  top: 15%;
+  left: 10%;
+  transform: rotate(15deg);
+  animation: float 8s infinite ease-in-out;
+}
+
+.glass-2 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  right: 15%;
+  transform: rotate(-10deg);
+  animation: float 12s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(15deg); }
+  50% { transform: translateY(-20px) rotate(20deg); }
+}
+
+/* Base animations */
+.hero-content > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s var(--transition-fluid) forwards;
+}
+
+.hero-name { animation-delay: 0.2s; }
+.hero-title { animation-delay: 0.4s; }
+.hero-tagline { animation-delay: 0.6s; }
+.hero-actions { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

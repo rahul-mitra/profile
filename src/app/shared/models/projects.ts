@@ -9,6 +9,7 @@ export interface Project {
   technologies: string[];
   liveSiteUrl?: string;
   githubRepoUrl?: string;
+  gridSpan?: 'small' | 'medium' | 'large';
 
   ownership: 'Personal' | 'Organization' | 'Client';
   overview: string;
