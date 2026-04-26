@@ -1,56 +1,49 @@
 @import '../../../../styles.scss';
 
 .section-header {
-  margin-bottom: $spacing-xl;
+  margin-bottom: var(--spacing-xl);
   text-align: center;
+  position: relative;
+  z-index: 2;
 
   @media (max-width: 768px) {
-    margin-bottom: $spacing-lg;
+    margin-bottom: var(--spacing-lg);
   }
 
   h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: $text-dark;
-    position: relative;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-xs);
+    @include text-gradient();
     display: inline-block;
-    margin-bottom: $spacing-md;
-
-    &::after {
-      content: '';
-      display: block;
-      width: 50%;
-      height: 4px;
-      background-color: $primary-purple;
-      margin: $spacing-xxs auto 0 auto;
-      border-radius: 2px;
-
-      @media (max-width: 768px) {
-        height: 3px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      font-size: 2.2rem;
-    }
-
-    @media (max-width: 480px) {
-      font-size: 1.8rem;
-    }
+    filter: drop-shadow(0 0 15px rgba(16, 185, 129, 0.3));
+    letter-spacing: -0.02em;
   }
 
   .subtitle {
-    font-size: 1.25rem;
-    color: $text-medium;
-    max-width: 700px;
+    font-size: 1.2rem;
+    color: var(--slate-300); /* Improved contrast */
+    max-width: 650px;
     margin: 0 auto;
     line-height: 1.6;
+    font-weight: 500;
+    letter-spacing: 0.01em;
 
     @media (max-width: 768px) {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      padding: 0 var(--spacing-md);
     }
-    @media (max-width: 480px) {
-      font-size: 1rem;
-    }
+  }
+
+  /* Decorative line with glow */
+  &::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--emerald-500), var(--emerald-300), var(--emerald-500));
+    margin: var(--spacing-md) auto 0;
+    border-radius: 99px;
+    @include glow(var(--emerald-500), 0.6);
   }
 }

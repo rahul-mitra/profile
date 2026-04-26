@@ -192,6 +192,115 @@
       ]
     },
     {
+      "id": "moments",
+      "title": "Moments - Upload and Tag Photos",
+      "ownership": "Personal",
+      "category": [
+        "Full-Stack",
+        "Angular",
+        "NodeTS",
+        "MongoDB",
+        "Multer",
+        "Typescript"
+      ],
+      "thumbnail": "assets/images/moment-login.png",
+      "shortDescription": "Personal project to upload and tag photos",
+      "technologies": [
+        "Angular",
+        "NodeTS",
+        "Express.js",
+        "MongoDB",
+        "SCSS",
+        "Multer",
+        "TypeScript"
+      ],
+      "liveSiteUrl": "https://moments.rahulmitra.dev",
+      "githubRepoUrl": "https://github.com/rahul-mitra/MomentsUI",
+      "overview": "This project is a personal initiative to create a photo management application where users can upload, tag, and organize their photos. The application features a user-friendly interface for uploading images, adding tags, and searching for photos based on tags.",
+      "role": "Full-Stack Developer",
+      "duration": "4 Days",
+      "problem": "Managing personal photos can be cumbersome, especially when trying to find specific images among a large collection. Existing solutions often lack flexibility in tagging and organizing photos.",
+      "process": "I started by defining the core features needed for the photo management application, such as image upload, tagging, and search functionality. I designed the user interface using Angular with TypeScript, focusing on simplicity and ease of use. The backend was developed using NodeTS with Express.js, and MongoDB was used for storing image metadata and tags. I implemented Multer for handling file uploads and managing image storage.",
+      "solution": "The resulting application allows users to easily upload photos, add tags and search for images based on tags. The user interface is designed to be intuitive, enabling quick access to uploaded photos and their associated tags. The application also supports image previews and basic metadata display.",
+      "outcome": "The photo management application was successfully developed and deployed, providing a simple yet effective solution for managing personal photo collections. Users can easily upload, tag, and search for photos, enhancing their ability to organize and retrieve images.",
+      "learnings": "Building this photo management application provided valuable experience in handling file uploads, managing image metadata, and implementing search functionality. I learned how to effectively use Multer for file handling in Node.js and how to design a user-friendly interface for photo management. Additionally, integrating Angular with NodeTS enhanced my skills in full-stack development and TypeScript.",
+      "fullImages": [
+        "assets/images/moment-login.png",
+        "assets/images/moment-moments.png",
+        "assets/images/moment-upload.png"
+      ]
+    },
+    {
+      "id": "data-validation-platform",
+      "ownership": "Organization",
+      "title": "Data Validation Platform",
+      "category": [
+        "Backend",
+        "AI Integration",
+        "Azure",
+        ".NET Core",
+        "REST APIs",
+        "SQL"
+      ],
+      "thumbnail": "assets/images/validation-station.png",
+      "shortDescription": "Intelligent document processing and review system using Azure Document Intelligence with custom workflow logic and role-based access.",
+      "technologies": [
+        "Dot Net Core",
+        "Azure Document Intelligence",
+        "MailKit",
+        "SQL Server",
+        "REST APIs"
+      ],
+      "role": "Backend Developer",
+      "duration": "3 Months",
+      "overview": "Backend services for an RPA-integrated document validation platform where bots upload PDFs, Azure AI extracts data, and users review/edit with tracking, role-based workflows, and resubmission to custom models.",
+      "problem": "Needed an AI-powered backend to auto-extract and validate data from PDFs uploaded by bots, and manage corrections, approvals, and re-submissions.",
+      "process": "Integrated Azure Document Intelligence for extraction, created a workflow system with user roles, implemented time tracking, and connected email alerts using MailKit.",
+      "solution": "Built a robust system supporting document uploads, data correction, role-based validation, and re-submission paths with end-to-end tracking and audit logs.",
+      "outcome": "Streamlined document handling and significantly reduced manual validation effort, while maintaining traceability and compliance.",
+      "learnings": "Gained expertise in intelligent document processing (IDP), Azure AI services, and building scalable approval workflows with logging and notifications.",
+      "fullImages": [
+        "assets/images/validation-station.png"
+      ]
+    },
+    {
+      "id": "cube-realtime",
+      "title": "Cube Real-Time Demo",
+      "ownership": "Personal",
+      "category": [
+        "Full-Stack",
+        "Angular",
+        "NodeTS",
+        "Multer",
+        "Typescript",
+        "Web Sockets",
+        "Socket.IO"
+      ],
+      "thumbnail": "assets/images/cube.png",
+      "shortDescription": "Real-time demo application using Angular and Node.js, showcasing real-time data updates with WebSockets.",
+      "technologies": [
+        "Angular",
+        "NodeTS",
+        "Express.js",
+        "TypeScript",
+        "Socket.IO",
+        "three.js"
+      ],
+      "liveSiteUrl": "https://cube.rahulmitra.dev",
+      "githubRepoUrl": "https://github.com/rahul-mitra/CubeMotionRealtimeUI",
+      "overview": "This is a simple demo application that showcases real-time data updates using Angular and Node.js. The application allows users to join a room and change a cube's color in real-time and rotate it using mouse drag. It demonstrates the use of WebSockets for real-time communication between the client and server.",
+      "role": "Full-Stack Developer",
+      "duration": "1 Day",
+      "problem": "Real-time applications often require efficient communication between the client and server to update data instantly. This demo aims to showcase how to implement real-time features using WebSockets.",
+      "process": "I started by setting up a basic Angular application and a Node.js server. I implemented Socket.IO for real-time communication, allowing the client to send and receive messages instantly. The frontend was designed to display a cube that can change color and rotate based on user interactions.",
+      "solution": "The resulting application allows users to join a room and interact with a cube in real-time. Users can change the cube's color and rotate it by dragging the mouse, with all changes reflected instantly across all connected clients. The application demonstrates the power of WebSockets for building interactive real-time applications.",
+      "outcome": "The real-time demo application was successfully developed and deployed, providing a simple yet effective demonstration of real-time data updates. Users can interact with the cube in real-time, showcasing the capabilities of WebSockets and Socket.IO.",
+      "learnings": "Building this real-time demo application provided valuable experience in implementing WebSockets and real-time communication in Angular applications. I also used three - Javascript 3d library to render the cube and learned basics of 3D rendering in the browser.",
+      "fullImages": [
+        "assets/images/cube.png"
+      ]
+    },
+    {
       "id": "cloud-rpa-services",
       "title": "Cloud RPA Services",
       "ownership": "Organization",
@@ -227,39 +336,6 @@
       "solution": "The resulting microservices architecture provides a scalable and flexible solution for running automation workflows on distributed Windows services. Users can schedule tasks, monitor execution status, and handle errors effectively. The architecture allows for easy addition of new services as needed, ensuring the platform can grow with user requirements.",
       "outcome": "The microservices were successfully deployed and integrated into the Cloud RPA platform, enabling users to run automation workflows on distributed Windows services. The architecture has proven to be robust and scalable, allowing for efficient management of automation tasks across multiple machines.",
       "learnings": "Building the microservices architecture provided valuable insights into distributed systems, service communication, and scalability. I learned how to design services for loose coupling and independent deployment, as well as how to effectively manage state in a distributed environment. Additionally, integrating SignalR and Socket.IO enhanced my understanding of real-time communication in microservices."
-    },
-    {
-      "id": "data-validation-platform",
-      "ownership": "Organization",
-      "title": "Data Validation Platform",
-      "category": [
-        "Backend",
-        "AI Integration",
-        "Azure",
-        ".NET Core",
-        "REST APIs",
-        "SQL"
-      ],
-      "thumbnail": "assets/images/validation-station.png",
-      "shortDescription": "Intelligent document processing and review system using Azure Document Intelligence with custom workflow logic and role-based access.",
-      "technologies": [
-        "Dot Net Core",
-        "Azure Document Intelligence",
-        "MailKit",
-        "SQL Server",
-        "REST APIs"
-      ],
-      "role": "Backend Developer",
-      "duration": "3 Months",
-      "overview": "Backend services for an RPA-integrated document validation platform where bots upload PDFs, Azure AI extracts data, and users review/edit with tracking, role-based workflows, and resubmission to custom models.",
-      "problem": "Needed an AI-powered backend to auto-extract and validate data from PDFs uploaded by bots, and manage corrections, approvals, and re-submissions.",
-      "process": "Integrated Azure Document Intelligence for extraction, created a workflow system with user roles, implemented time tracking, and connected email alerts using MailKit.",
-      "solution": "Built a robust system supporting document uploads, data correction, role-based validation, and re-submission paths with end-to-end tracking and audit logs.",
-      "outcome": "Streamlined document handling and significantly reduced manual validation effort, while maintaining traceability and compliance.",
-      "learnings": "Gained expertise in intelligent document processing (IDP), Azure AI services, and building scalable approval workflows with logging and notifications.",
-      "fullImages": [
-        "assets/images/validation-station.png"
-      ]
     },
     {
       "id": "socketio-csharp-fork",
@@ -417,82 +493,6 @@
       "fullImages":[
         "assets/images/swing.png"
       ]
-    },
-    {
-      "id": "moments",
-      "title": "Moments - Upload and Tag Photos",
-      "ownership": "Personal",
-      "category": [
-        "Full-Stack",
-        "Angular",
-        "NodeTS",
-        "MongoDB",
-        "Multer",
-        "Typescript"
-      ],
-      "thumbnail": "assets/images/moment-login.png",
-      "shortDescription": "Personal project to upload and tag photos",
-      "technologies": [
-        "Angular",
-        "NodeTS",
-        "Express.js",
-        "MongoDB",
-        "SCSS",
-        "Multer",
-        "TypeScript"
-      ],
-      "liveSiteUrl": "https://moments.rahulmitra.dev",
-      "githubRepoUrl": "https://github.com/rahul-mitra/MomentsUI",
-      "overview": "This project is a personal initiative to create a photo management application where users can upload, tag, and organize their photos. The application features a user-friendly interface for uploading images, adding tags, and searching for photos based on tags.",
-      "role": "Full-Stack Developer",
-      "duration": "4 Days",
-      "problem": "Managing personal photos can be cumbersome, especially when trying to find specific images among a large collection. Existing solutions often lack flexibility in tagging and organizing photos.",
-      "process": "I started by defining the core features needed for the photo management application, such as image upload, tagging, and search functionality. I designed the user interface using Angular with TypeScript, focusing on simplicity and ease of use. The backend was developed using NodeTS with Express.js, and MongoDB was used for storing image metadata and tags. I implemented Multer for handling file uploads and managing image storage.",
-      "solution": "The resulting application allows users to easily upload photos, add tags and search for images based on tags. The user interface is designed to be intuitive, enabling quick access to uploaded photos and their associated tags. The application also supports image previews and basic metadata display.",
-      "outcome": "The photo management application was successfully developed and deployed, providing a simple yet effective solution for managing personal photo collections. Users can easily upload, tag, and search for photos, enhancing their ability to organize and retrieve images.",
-      "learnings": "Building this photo management application provided valuable experience in handling file uploads, managing image metadata, and implementing search functionality. I learned how to effectively use Multer for file handling in Node.js and how to design a user-friendly interface for photo management. Additionally, integrating Angular with NodeTS enhanced my skills in full-stack development and TypeScript.",
-      "fullImages": [
-        "assets/images/moment-login.png",
-        "assets/images/moment-moments.png",
-        "assets/images/moment-upload.png"
-      ]
-    },
-    {
-      "id": "cube-realtime",
-      "title": "Cube Real-Time Demo",
-      "ownership": "Personal",
-      "category": [
-        "Full-Stack",
-        "Angular",
-        "NodeTS",
-        "Multer",
-        "Typescript",
-        "Web Sockets",
-        "Socket.IO"
-      ],
-      "thumbnail": "assets/images/cube.png",
-      "shortDescription": "Real-time demo application using Angular and Node.js, showcasing real-time data updates with WebSockets.",
-      "technologies": [
-        "Angular",
-        "NodeTS",
-        "Express.js",
-        "TypeScript",
-        "Socket.IO",
-        "three.js"
-      ],
-      "liveSiteUrl": "https://cube.rahulmitra.dev",
-      "githubRepoUrl": "https://github.com/rahul-mitra/CubeMotionRealtimeUI",
-      "overview": "This is a simple demo application that showcases real-time data updates using Angular and Node.js. The application allows users to join a room and change a cube's color in real-time and rotate it using mouse drag. It demonstrates the use of WebSockets for real-time communication between the client and server.",
-      "role": "Full-Stack Developer",
-      "duration": "1 Day",
-      "problem": "Real-time applications often require efficient communication between the client and server to update data instantly. This demo aims to showcase how to implement real-time features using WebSockets.",
-      "process": "I started by setting up a basic Angular application and a Node.js server. I implemented Socket.IO for real-time communication, allowing the client to send and receive messages instantly. The frontend was designed to display a cube that can change color and rotate based on user interactions.",
-      "solution": "The resulting application allows users to join a room and interact with a cube in real-time. Users can change the cube's color and rotate it by dragging the mouse, with all changes reflected instantly across all connected clients. The application demonstrates the power of WebSockets for building interactive real-time applications.",
-      "outcome": "The real-time demo application was successfully developed and deployed, providing a simple yet effective demonstration of real-time data updates. Users can interact with the cube in real-time, showcasing the capabilities of WebSockets and Socket.IO.",
-      "learnings": "Building this real-time demo application provided valuable experience in implementing WebSockets and real-time communication in Angular applications. I also used three - Javascript 3d library to render the cube and learned basics of 3D rendering in the browser.",
-      "fullImages": [
-        "assets/images/cube.png"
-      ]
     }
   ],
   "testimonials": [
@@ -528,14 +528,48 @@
   },
   "cvLink": "assets/data/Rahul-Mitra-Resume.pdf",
   "experiences": [
+     {
+      "id": "exp-tytan-tech-senior-software-engineer",
+      "organization": "Tyttan Technology INC",
+      "location": "Remote, India",
+      "role": "Senior Software Engineer",
+      "duration": "Nov 2025 - Present",
+      "startDate": "2025-11-01",
+      "endDate": "Present",
+      "descriptionPoints": [
+        "Developing high-performance RAG LLM user interfaces using Angular 17+ for a leading enterprise energy investment firm.",
+        "Enchanced a proprietary enterprise-grade RAG LLM platform, enabling advanced AI-driven querying and real-time interaction with large-scale corporate data.",
+        "Built a sophisticated AI-driven fundraising and due diligence system that leverages RAG LLM and vector databases to automate complex document analysis and response generation.",
+        "Engineered robust backend services using Node.js with TSOA and Azure Python Functions within a comprehensive Azure ecosystem.",
+        "Implemented enterprise-grade security and identity management using MSAL, Azure Managed Identity, and secure file storage solutions.",
+        "Optimized data performance and retrieval utilizing Azure Redis, Azure CosmosDB, and Azure AI Search for vector-based mapping."
+      ],
+      "technologiesUsed": [
+        "Angular 17+",
+        "Node.js",
+        "TSOA",
+        "Python",
+        "Azure Functions",
+        "Azure CosmosDB",
+        "Azure Redis",
+        "Azure File Storage",
+        "RAG LLM",
+        "Vector DB",
+        "MSAL",
+        "Azure Managed Identity",
+        "TypeScript",
+        "SCSS"
+      ],
+      "logoUrl": "data:image/png;base64,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"
+    },
     {
       "id": "exp-innowise-senior-software-engineer",
       "organization": "InnoWise LLC",
       "location": "Pune, India",
       "role": "Senior Software Engineer",
-      "duration": "Jul 2021 - Present",
+      "duration": "Jul 2021 - Oct 2025",
       "startDate": "2021-07-01",
-      "endDate": "Present",
+      "endDate": "2025-10-31",
       "descriptionPoints": [
         "Created several microservices for a cloud-based RPA platform, focusing on building scalable and maintainable applications using Angular, Node.js, and .NET Core.",
         "Designed and implemented user interfaces using Angular and TypeScript, ensuring a responsive and intuitive user experience.",
